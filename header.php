@@ -21,6 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<?php get_template_part('template-parts/global', 'svg'); ?>
 	<div class="front-col-image" style='background:url("<?php echo esc_url( get_theme_mod( 'customizer_setting_one' ) ); ?>"'></div>
 
 <div id="page">

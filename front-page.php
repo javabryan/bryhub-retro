@@ -13,7 +13,11 @@ get_header();
     <div class="bryhub-background-1" style="background:url('<?php echo esc_url(get_template_directory_uri() . '/inc/img/background-1.jpg')?>')">
         <div class="bryhub-screen"></div>
         <div class="sprites-container">
-            <div class="sprites sprite-rocket" style="background:url('<?php echo esc_url(get_template_directory_uri() . '/inc/img/rocket.png')?>')"></div>
+            <div class="sprites sprite-rocket">
+                <svg focusable="false">
+                        <use href="#rocket"></use>
+                </svg>
+            </div>
             <div class="sprites sprite-enemy" style="background:url('<?php echo esc_url(get_template_directory_uri() . '/inc/img/spaceship.png')?>')"></div>
             <div class="sprites"></div>
             <div class="sprites"></div>

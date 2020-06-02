@@ -17,6 +17,14 @@
     filter: none;
 }
 
+.sprites svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left: 0;
+}
+
 .sprite-rocket {
     height: 120px;
     width: 68px;
@@ -28,6 +36,7 @@
 }
 
 .sprite-enemy {
+    position: relative;
     height: 120px;
     width: 88px;
     top: 10%;
@@ -35,18 +44,23 @@
     transform: rotatey(180deg);
     animation-name: enemy-path;
     animation-timing-function: linear;
+
+    &::after {
+        content:'';
+        position: absolute;
+    }
 }
 
 @keyframes rocket-path {
     0% {
         top: 30%;
-        left: -20%;
+        left: -75%;
     }
 
     2% {
         top: 30%;
-        left:5%;
-        transform: rotate(90deg);
+        left:20%;
+        transform: rotate(95deg);
     }
 
     3% {
@@ -55,19 +69,19 @@
 
     4% {
         top: 55%;
-        left: 35%;
+        left: 45%;
         transform: rotate(50deg);
     }
 
     5% {
         top: 25%;
-        left: 75%;
+        left: 58%;
         transform: rotate(100deg);
     }
 
     6% {
         top: 35%;
-        left: 115%;
+        left: 195%;
         transform: rotate(80deg);
     }
 
@@ -78,7 +92,7 @@
 
     8% {
         top: 55%;
-        left: -15%;
+        left: -115%;
         transform: rotate(-100deg);
     }
 
@@ -89,55 +103,44 @@
     }
 
     10% {
-        left: 115%;
+        left: 145%;
         top: 35%;
-    }
-
-    13% {
         transform: rotate(100deg);
     }
 
-    14% {
-        transform: rotate(0deg);
+    11% {
+        transform: rotate(-100deg);
     }
 
-    15% {
+    12% {
+        transform: rotate(-100deg);
+    }
+
+    13% {
         top: 10%;
         left: 80%;
         transform: rotate(0deg);
     }
 
-    16% {
+    14% {
         top: 15%;
         left: 82%;
     }
 
-    17% {
+    15% {
         top: 13%;
         left: 82%;
     }
 
-    17% {
+    16% {
         top: 10%;
         left: 81%;
     }
 
-    18% {
+    17% {
         top: 12%;
         left: 82%;
         transform: rotate(0deg);
-    }
-
-    20% {
-        top: 70%;
-        left:84%;
-        transform: rotate(180deg);
-    }
-
-    100% {
-        top: 70%;
-        left:84%;
-        transform: rotate(180deg);
     }
 }
 
@@ -157,7 +160,15 @@
     10% {transform:rotatey(-180deg)}
     11% {
         top: 15%;
-        transform:rotatey(180deg)
+        transform:rotatey(180deg);
+        filter: hue-rotate(0deg)
+    }
+    12% {
+        filter: hue-rotate(270deg);
+    }
+    13% {
+        transform: rotate(180deg) scale(2.5);
     }
     100% {left: 10%;}
 }
+
