@@ -17,6 +17,11 @@ get_header();
                 <svg focusable="false">
                         <use href="#rocket"></use>
                 </svg>
+                <div class="sprites rocket-fire">
+                    <svg focusable="false">
+                            <use href="#rocket-fire"></use>
+                    </svg>
+                </div>
             </div>
             <div class="sprites sprite-enemy" style="background:url('<?php echo esc_url(get_template_directory_uri() . '/inc/img/spaceship.png')?>')"></div>
             <div class="sprites"></div>

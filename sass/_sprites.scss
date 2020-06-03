@@ -26,6 +26,7 @@
 }
 
 .sprite-rocket {
+    position: relative;
     height: 120px;
     width: 68px;
     top: 30%;
@@ -33,6 +34,20 @@
     transform: rotate(110deg);
     animation-name: rocket-path;
     animation-timing-function: linear;
+}
+
+.rocket-fire {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 80%;
+    left:2px;
+    transform: rotate(90deg) scale(2);
+    z-index: -1;
+    animation-name: rocket-fire-path;
+    animation-duration: $animation-fire-length; 
+    animation-timing-function: step-end;
+    transition: 0;
 }
 
 .sprite-enemy {
@@ -48,6 +63,18 @@
     &::after {
         content:'';
         position: absolute;
+        bottom: 50%;
+        left: 10px;
+        height: 4px;
+        width: 60px;
+        filter: hue-rotate(-60deg);
+        box-shadow: 0 0 13px 0 white;
+        opacity: 1;
+        border-radius: 5px 2px 5px 2px;
+        background-image: linear-gradient(to right top, #ff0000, #ff5e00, #ff8e00, #ffb700, #ffdd00);
+        animation-name: enemy-laser;
+        animation-duration: 120s;
+        animation-timing-function: linear;
     }
 }
 
@@ -125,22 +152,89 @@
     14% {
         top: 15%;
         left: 82%;
+        filter: none;
+        animation-timing-function: step-end;
     }
 
     15% {
         top: 13%;
         left: 82%;
-    }
-
-    16% {
-        top: 10%;
-        left: 81%;
-    }
-
-    17% {
-        top: 12%;
-        left: 82%;
+        filter: sepia(5);
         transform: rotate(0deg);
+    }
+
+    18% {
+        top: 70%;
+        left: 90%;
+        transform: rotate(165deg) scale(0.4);
+    }
+    100% {
+        top: 70%;
+        left: 90%;
+        transform: rotate(165deg) scale(0.4);
+    }
+}
+
+@keyframes rocket-fire-path {
+    0% {
+        top: 90%;
+        opacity:1;
+        transform: rotate(90deg) scale(2);
+    }
+    4% {
+        top: 60%;
+        opacity: 0;
+        transform: rotate(90deg) scale(1);
+    }
+    8% {
+        opacity: 1;
+    }
+    9% {
+        opacity: 0;
+    }
+    10% {
+        top: 90%;
+        opacity: 1;
+        transform: rotate(90deg) scale(2.2);
+    }
+
+    12% {
+        top: 120%;
+        transform: rotate(90deg) scale(3);
+    }
+
+    22% {
+        top: 50%;
+        transform: rotate(90deg) scale(1);
+    }
+
+    26% {
+        top: 40%;
+        transform: rotate(90deg) scale(0.8);
+    }
+
+    27% {
+        transform: rotate(90deg) scale(1);
+    }
+
+    28% {
+        transform: rotate(90deg) scale(0.8);
+    }
+
+    30% {
+        transform: rotate(90deg) scale(1);
+    }
+
+    33% {
+        transform: rotate(90deg) scale(0.8);
+    }
+
+    35% {
+        transform: rotate(90deg) scale(1);
+    }
+
+    38% {
+        transform: scale(0);
     }
 }
 
@@ -155,20 +249,62 @@
     }
     9% {
         top: 10%;
+        left: 10%;
         transform:rotatey(180deg);
     }
-    10% {transform:rotatey(-180deg)}
+    10% {
+        transform:rotatey(-180deg);
+    }
     11% {
-        top: 15%;
         transform:rotatey(180deg);
-        filter: hue-rotate(0deg)
+        filter: hue-rotate(0deg);
     }
     12% {
-        filter: hue-rotate(270deg);
+        filter: hue-rotate(1400deg) saturate(3);
     }
     13% {
-        transform: rotate(180deg) scale(2.5);
+        transform: rotatey(180deg) scale(1) rotate(0deg);
+        top: 5%;
     }
-    100% {left: 10%;}
+    14% {
+        transform: rotatey(180deg) scale(3) rotate(15deg);
+        top: 35%;
+    }
+    20% {
+        transform: rotatey(180deg) scale(1.5);
+    }
+    100% {
+        left: 10%;
+        filter: hue-rotate(1400deg);
+    }
 }
 
+@keyframes enemy-laser {
+    0% {
+        opacity: 0;
+    }
+
+
+    12% {
+        transform: rotatex(0deg);
+    }
+    13% {
+        opacity: 0;
+        transform: rotatex(200deg);
+        left: 0;
+        animation-timing-function: step-end;
+    }
+    14% {
+        left: 0;
+        opacity: 1;
+        transform: rotatex(1080deg);
+        animation-timing-function: linear;
+    }
+    15% {
+        left: -450%;
+        transform: rotatex(4020deg);
+    }
+    16% {
+        opacity: 0;
+    }
+}
