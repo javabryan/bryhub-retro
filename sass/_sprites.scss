@@ -119,41 +119,41 @@
 
     8% {
         top: 55%;
-        left: -115%;
+        left: -110%;
         transform: rotate(-100deg);
     }
 
     9% {
         top: 10%;
-        left: -15%;
+        left: -25%;
         transform: rotate(100deg);
     }
 
     10% {
-        left: 145%;
+        left: 185%;
         top: 35%;
         transform: rotate(100deg);
     }
 
     11% {
         transform: rotate(-100deg);
-    }
-
-    12% {
-        transform: rotate(-100deg);
+        left:110%;
+        animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
     13% {
+        transform: rotate(-100deg);
         top: 10%;
         left: 80%;
         transform: rotate(0deg);
+        animation-timing-function: cubic-bezier(0.48, -0.25, 0.25, 1);
     }
 
     14% {
         top: 15%;
         left: 82%;
         filter: none;
-        animation-timing-function: step-end;
+        animation-timing-function: cubic-bezier(0.48, -0.25, 0.25, 1);
     }
 
     15% {
@@ -161,17 +161,18 @@
         left: 82%;
         filter: sepia(5);
         transform: rotate(0deg);
+        animation-timing-function: linear;
     }
 
-    18% {
+    20% {
         top: 70%;
         left: 90%;
-        transform: rotate(165deg) scale(0.4);
+        transform: rotate(165deg) scale(0.5);
     }
     100% {
         top: 70%;
         left: 90%;
-        transform: rotate(165deg) scale(0.4);
+        transform: rotate(165deg) scale(0.5);
     }
 }
 
@@ -247,34 +248,53 @@
         left: 10%;
         transform:rotatey(180deg);
     }
+    7% {
+        transform:rotatey(180deg) rotate(0deg);
+        animation-timing-function: step-end;
+    }
+    8% {
+        transform:rotatey(0deg);
+        animation-timing-function: step-end;
+    }
     9% {
-        top: 10%;
+        top: 7%;
         left: 10%;
-        transform:rotatey(180deg);
+        transform:rotatey(360deg) rotate(0deg);
     }
     10% {
         transform:rotatey(-180deg);
     }
     11% {
-        transform:rotatey(180deg);
         filter: hue-rotate(0deg);
+        transform: rotatey(180deg) scale(1) rotate(0deg);
     }
     12% {
         filter: hue-rotate(1400deg) saturate(3);
-    }
-    13% {
-        transform: rotatey(180deg) scale(1) rotate(0deg);
+        transform: rotatey(180deg) scale(3) rotate(0deg);
         top: 5%;
     }
+    13% {
+        transform: rotatey(180deg) scale(3) rotate(0deg);
+        animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    }
     14% {
-        transform: rotatey(180deg) scale(3) rotate(15deg);
-        top: 35%;
+        transform: rotatey(180deg) scale(3) rotate(11deg);
+        top: 25%;
+        left: 10%;
+        animation-timing-function: step-start;
+    }
+    15% {
+        transform: rotatey(180deg) scale(3) rotate(11deg);
+        left: 9%;
+        top: 26%;
+        animation-timing-function: linear;
     }
     20% {
         transform: rotatey(180deg) scale(1.5);
     }
     100% {
         left: 10%;
+        top: 5%;
         filter: hue-rotate(1400deg);
     }
 }
