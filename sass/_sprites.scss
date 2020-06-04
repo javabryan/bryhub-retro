@@ -5,6 +5,7 @@
     width: 100%;
     top: 0;
     left: 0;
+    z-index: -1;
 }
 
 .sprites {
@@ -13,7 +14,6 @@
     background-repeat: no-repeat !important;
     animation-duration: $animation-length;
     animation-timing-function: linear;
-    z-index: 5;
     filter: none;
 }
 
@@ -54,28 +54,59 @@
     position: relative;
     height: 120px;
     width: 88px;
+    margin: 0;
     top: 10%;
     left: -20%;
     transform: rotatey(180deg);
     animation-name: enemy-path;
     animation-timing-function: linear;
+    z-index: 0;
+}
 
-    &::after {
-        content:'';
-        position: absolute;
-        bottom: 50%;
-        left: 10px;
-        height: 4px;
-        width: 60px;
-        filter: hue-rotate(-60deg);
-        box-shadow: 0 0 13px 0 white;
-        opacity: 1;
-        border-radius: 5px 2px 5px 2px;
-        background-image: linear-gradient(to right top, #ff0000, #ff5e00, #ff8e00, #ffb700, #ffdd00);
-        animation-name: enemy-laser;
-        animation-duration: 120s;
-        animation-timing-function: linear;
+.sprite-enemy-laser {
+    position: absolute;
+    display: block;
+    height: 16px;
+    width: 100px;
+    box-shadow: 0 0 13px 0 white;
+    opacity: 1;
+    border-radius: 50% 10% 10% 50%;
+    background-image: linear-gradient(to right top, #ff0000, #ff5e00, #d9ff00, #ffb700, #ffdd00);
+    animation-name: enemy-laser;
+    animation-duration: 120s;
+    animation-timing-function: linear;
+}
+
+.sprite-boom {
+    position: absolute;
+    height: 500%;
+    width: 500%;
+    top: -220%;
+    left: -200%;
+
+    svg {
+        fill: #ff8e00;
+        stroke: #000;
+        stroke-miterlimit: 7;
+        stroke-width:4;
+        opacity: 0;
+        animation-name: boom-path;
+        animation-duration: $animation-boom-length;
+        animation-timing-function: step-end;
     }
+}
+
+.sprite-earth {
+    position: absolute;
+    height: 60%;
+    width: 60%;
+    top: 48%;
+    left: 65%;
+    z-index: -10;
+    transform: scale(0.05);
+    animation-name: earth-path;
+    animation-duration: $animation-length;
+    animation-timing-function: linear;
 }
 
 @keyframes rocket-path {
@@ -153,26 +184,33 @@
         top: 15%;
         left: 82%;
         filter: none;
-        animation-timing-function: cubic-bezier(0.48, -0.25, 0.25, 1);
+        animation-timing-function: step-end;
     }
 
     15% {
         top: 13%;
         left: 82%;
-        filter: sepia(5);
+        transform: rotate(0deg);
+        animation-timing-function: step-end;
+    }
+
+    16% {
+        top: 13%;
+        left: 82%;
+        filter: sepia(10);
         transform: rotate(0deg);
         animation-timing-function: linear;
     }
 
-    20% {
+    23% {
         top: 70%;
         left: 90%;
-        transform: rotate(165deg) scale(0.5);
+        transform: rotate(165deg) scale(0);
     }
     100% {
         top: 70%;
         left: 90%;
-        transform: rotate(165deg) scale(0.5);
+        transform: rotate(165deg) scale(0);
     }
 }
 
@@ -241,60 +279,80 @@
 
 @keyframes enemy-path {
     0% {left: -20%;}
-    3% {top: 15%;}
-    4% {top: 10%;}
-    5% {top: 15%;}
+    3% {top: 12%;}
+    4% {top: 8%;}
+    5% {top: 12%;}
     6% {
-        left: 10%;
+        left: 6%;
         transform:rotatey(180deg);
     }
+
     7% {
         transform:rotatey(180deg) rotate(0deg);
         animation-timing-function: step-end;
     }
+
     8% {
         transform:rotatey(0deg);
         animation-timing-function: step-end;
     }
+
     9% {
-        top: 7%;
-        left: 10%;
+        top: 0%;
+        left: 5%;
         transform:rotatey(360deg) rotate(0deg);
     }
+
     10% {
         transform:rotatey(-180deg);
     }
+
     11% {
         filter: hue-rotate(0deg);
         transform: rotatey(180deg) scale(1) rotate(0deg);
     }
+
     12% {
         filter: hue-rotate(1400deg) saturate(3);
         transform: rotatey(180deg) scale(3) rotate(0deg);
         top: 5%;
     }
+
     13% {
         transform: rotatey(180deg) scale(3) rotate(0deg);
         animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
     }
+
     14% {
-        transform: rotatey(180deg) scale(3) rotate(11deg);
+        transform: rotatey(180deg) scale(3) rotate(10deg);
         top: 25%;
         left: 10%;
         animation-timing-function: step-start;
     }
+
     15% {
-        transform: rotatey(180deg) scale(3) rotate(11deg);
+        transform: rotatey(180deg) scale(3) rotate(10deg);
         left: 9%;
         top: 26%;
         animation-timing-function: linear;
     }
-    20% {
-        transform: rotatey(180deg) scale(1.5);
+
+    16% {
+        transform: rotatey(180deg) scale(2) rotate(20deg);
+        left: 6%;
+        top: 28%;
+        animation-timing-function: cubic-bezier(0.19, -0.35, 0.22, 1);
     }
+
+    17% {
+        left: 30%;
+        top: -800px;
+        transform: rotatey(180deg) scale(1.5);
+        animation-timing-function: cubic-bezier(0.25, -0.38, 0.735, 1);
+    }
+
     100% {
-        left: 10%;
-        top: 5%;
+        top: -800px;
         filter: hue-rotate(1400deg);
     }
 }
@@ -315,16 +373,93 @@
         animation-timing-function: step-end;
     }
     14% {
-        left: 0;
+        top: 46%;
+        left: 14%;
         opacity: 1;
         transform: rotatex(1080deg);
         animation-timing-function: linear;
     }
     15% {
-        left: -450%;
-        transform: rotatex(4020deg);
+        top: 26%;
+        left: 75%;
+        transform: rotatex(5020deg);
+        animation-timing-function: step-start;
+        opacity: 1;
     }
     16% {
         opacity: 0;
+        animation-timing-function: step-start;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes boom-path {
+    0% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 1;
+        transform: rotate(12deg) scale(1.2);
+    }
+
+    61% {
+        transform: rotate(-12deg) scale(1);
+    }
+
+    62% {
+        transform: rotate(12deg) scale(1.2);
+    }
+
+    64% {
+        transform: rotate(-12deg) scale(1);
+        animation-timing-function: linear;
+        opacity: 1;
+    }
+
+    65% {
+        opacity: 0;
+    }
+}
+
+@keyframes enemy-surprise {
+    0% {
+        opacity: 0;
+    }
+
+    6% {
+        opacity: 1;
+        animation-timing-function: step-start;
+    }
+    7% {
+        opacity: 0;
+        animation-timing-function: linear;
+    }
+}
+
+@keyframes earth-path {
+    0% {
+        transform: scale(0.05) rotate(0deg);
+        filter: brightness(0.2);
+    }
+
+    26% {
+        left: 63%;
+        transform: scale(0.05) rotate(0deg);
+    }
+
+    32% {
+        top: 50%;
+        left: 50%;
+        transform: scale(0.08) rotate(8deg);
+    }
+
+    100% {
+        top: -50%;
+        left: -50%;
+        transform: scale(2) rotate(12deg);
+        filter: brightness(0.3);
     }
 }

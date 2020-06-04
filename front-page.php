@@ -22,10 +22,15 @@ get_header();
                             <use href="#rocket-fire"></use>
                     </svg>
                 </div>
+                <div class="sprites sprite-boom">
+                    <svg focusable="false">
+                        <use href="#boom"></use>
+                    </svg>
+                </div>
             </div>
             <div class="sprites sprite-enemy" style="background:url('<?php echo esc_url(get_template_directory_uri() . '/inc/img/spaceship.png')?>')"></div>
-            <div class="sprites"></div>
-            <div class="sprites"></div>
+            <div class="sprites sprite-earth" style="background:url('<?php echo esc_url(get_template_directory_uri() . '/inc/img/earth.png')?>')"></div>
+            <div class="sprites sprite-enemy-laser"></div>
             <div class="sprites"></div>
             <div class="sprites"></div>
             <div class="sprites"></div>
@@ -33,7 +38,7 @@ get_header();
         </div>
         <div class="title-container">
             <div class="bryhub-site-title d-flex pb-0 mb-0">
-                <a class="sr-only" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                <a class="sr-only" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html(bloginfo( 'name' )); ?></a>
             </div>
             <div class="description-container">
                 <span>Under construction, come back later!</span>
