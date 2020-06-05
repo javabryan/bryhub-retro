@@ -15,6 +15,9 @@
     animation-duration: $animation-length;
     animation-timing-function: linear;
     filter: none;
+    will-change: transform;        /* Example of <custom-ident> */
+    will-change: opacity;          /* Example of <custom-ident> */
+    will-change: left, top;
 }
 
 .sprites svg {
@@ -69,7 +72,7 @@
     height: 16px;
     width: 100px;
     box-shadow: 0 0 13px 0 white;
-    opacity: 1;
+    opacity: 0;
     border-radius: 50% 10% 10% 50%;
     background-image: linear-gradient(to right top, #ff0000, #ff5e00, #d9ff00, #ffb700, #ffdd00);
     animation-name: enemy-laser;
@@ -96,17 +99,70 @@
     }
 }
 
-.sprite-earth {
+.sprite-mercury,
+.sprite-venus,
+.sprite-earth,
+.sprite-mars,
+.sprite-jupiter,
+.sprite-saturn,
+.sprite-uranus,
+.sprite-neptune {
     position: absolute;
-    height: 60%;
-    width: 60%;
-    top: 48%;
-    left: 65%;
+    height: 100%;
+    width: 100%;
+    top: 5.5%;
+    left: -18%;
     z-index: -10;
-    transform: scale(0.05);
-    animation-name: earth-path;
-    animation-duration: $animation-length;
-    animation-timing-function: linear;
+    transform: scale(0.01);
+    filter: brightness(0.2);
+    animation-duration: $animation-planet-length;
+    animation-name: planet-path;
+    animation-timing-function: cubic-bezier(1,.05,1,.36);
+    animation-iteration-count: infinite;
+}
+
+.sprite-mercury {
+    left: 14%;
+    animation-delay: 22s;
+    animation-name: planet-path-opp;
+}
+
+.sprite-venus {
+    left: -10%;
+    animation-delay: 27s;
+}
+
+.sprite-earth {
+    left: 10%;
+   animation-delay: 32s;
+   animation-name: planet-path-opp;
+}
+
+.sprite-mars {
+    left: -2%;
+    animation-delay: 37s;
+}
+
+.sprite-jupiter {
+    left: 6%;
+    animation-delay: 42s;
+    animation-name: planet-path-opp;
+}
+
+.sprite-saturn {
+    left: 2%;
+    animation-delay: 47s;
+}
+
+.sprite-uranus {
+    left: -6%;
+    animation-name: planet-path-opp;
+    animation-delay: 136s;
+}
+
+.sprite-neptune {
+    left: -14%;
+    animation-delay: 158s;
 }
 
 @keyframes rocket-path {
@@ -203,7 +259,7 @@
     }
 
     23% {
-        top: 70%;
+        top: 90%;
         left: 90%;
         transform: rotate(165deg) scale(0);
     }
@@ -439,27 +495,18 @@
     }
 }
 
-@keyframes earth-path {
-    0% {
-        transform: scale(0.05) rotate(0deg);
-        filter: brightness(0.2);
-    }
-
-    26% {
-        left: 63%;
-        transform: scale(0.05) rotate(0deg);
-    }
-
-    32% {
-        top: 50%;
-        left: 50%;
-        transform: scale(0.08) rotate(8deg);
-    }
-
+@keyframes planet-path {
     100% {
-        top: -50%;
-        left: -50%;
-        transform: scale(2) rotate(12deg);
-        filter: brightness(0.3);
+        left: -80%;
+        transform: scale(1) rotate(-32deg);
+        filter: brightness(0.4);
+    }
+}
+
+@keyframes planet-path-opp {
+    100% {
+        left: 90%;
+        transform: scale(1) rotate(32deg);
+        filter: brightness(0.4);
     }
 }

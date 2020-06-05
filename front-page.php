@@ -29,12 +29,15 @@ get_header();
                 </div>
             </div>
             <div class="sprites sprite-enemy" style="background:url('<?php echo esc_url(get_template_directory_uri() . '/inc/img/spaceship.png')?>')"></div>
-            <div class="sprites sprite-earth" style="background:url('<?php echo esc_url(get_template_directory_uri() . '/inc/img/earth.png')?>')"></div>
             <div class="sprites sprite-enemy-laser"></div>
-            <div class="sprites"></div>
-            <div class="sprites"></div>
-            <div class="sprites"></div>
-            <div class="sprites"></div>
+            <div class="sprites sprite-mercury"><svg focusable="false"><use href="#mercury"></use></svg></div>
+            <div class="sprites sprite-venus"><svg focusable="false"><use href="#venus"></use></svg></div>
+            <div class="sprites sprite-mars"><svg focusable="false"><use href="#mars"></use></svg></div>
+            <div class="sprites sprite-earth"><svg focusable="false"><use href="#earth"></use></svg></div>
+            <div class="sprites sprite-jupiter"><svg focusable="false"><use href="#jupiter"></use></svg></div>
+            <div class="sprites sprite-saturn"><svg focusable="false"><use href="#saturn"></use></svg></div>
+            <div class="sprites sprite-uranus"><svg focusable="false"><use href="#uranus"></use></svg></div>
+            <div class="sprites sprite-neptune"><svg focusable="false"><use href="#uranus"></use></svg></div>
         </div>
         <div class="title-container">
             <div class="bryhub-site-title d-flex pb-0 mb-0">
