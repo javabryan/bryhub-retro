@@ -15,8 +15,8 @@
     animation-duration: $animation-length;
     animation-timing-function: linear;
     filter: none;
-    will-change: transform;        /* Example of <custom-ident> */
-    will-change: opacity;          /* Example of <custom-ident> */
+    will-change: transform;
+    will-change: opacity;
     will-change: left, top;
 }
 
@@ -97,72 +97,6 @@
         animation-duration: $animation-boom-length;
         animation-timing-function: step-end;
     }
-}
-
-.sprite-mercury,
-.sprite-venus,
-.sprite-earth,
-.sprite-mars,
-.sprite-jupiter,
-.sprite-saturn,
-.sprite-uranus,
-.sprite-neptune {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 5.5%;
-    left: -18%;
-    z-index: -10;
-    transform: scale(0.01);
-    filter: brightness(0.2);
-    animation-duration: $animation-planet-length;
-    animation-name: planet-path;
-    animation-timing-function: cubic-bezier(1,.05,1,.36);
-    animation-iteration-count: infinite;
-}
-
-.sprite-mercury {
-    left: 14%;
-    animation-delay: 22s;
-    animation-name: planet-path-opp;
-}
-
-.sprite-venus {
-    left: -10%;
-    animation-delay: 27s;
-}
-
-.sprite-earth {
-    left: 10%;
-   animation-delay: 32s;
-   animation-name: planet-path-opp;
-}
-
-.sprite-mars {
-    left: -2%;
-    animation-delay: 37s;
-}
-
-.sprite-jupiter {
-    left: 6%;
-    animation-delay: 42s;
-    animation-name: planet-path-opp;
-}
-
-.sprite-saturn {
-    left: 2%;
-    animation-delay: 47s;
-}
-
-.sprite-uranus {
-    left: -6%;
-    animation-name: planet-path-opp;
-    animation-delay: 136s;
-}
-
-.sprite-neptune {
-    left: -14%;
-    animation-delay: 158s;
 }
 
 @keyframes rocket-path {
@@ -492,21 +426,5 @@
     7% {
         opacity: 0;
         animation-timing-function: linear;
-    }
-}
-
-@keyframes planet-path {
-    100% {
-        left: -80%;
-        transform: scale(1) rotate(-32deg);
-        filter: brightness(0.4);
-    }
-}
-
-@keyframes planet-path-opp {
-    100% {
-        left: 90%;
-        transform: scale(1) rotate(32deg);
-        filter: brightness(0.4);
     }
 }

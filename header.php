@@ -25,46 +25,11 @@
 	<div class="front-col-image" style='background:url("<?php echo esc_url( get_theme_mod( 'customizer_setting_one' ) ); ?>"'></div>
 
 <div id="page">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bryhub-retro' ); ?></a>
-
+	<?php if (!is_front_page() && !is_home()) : ?>
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bryhub-retro' ); ?></a>
+	<?php endif; ?>
 	<header id="masthead" class="site-header">
-			<nav class="navbar navbar-expand-md">
-					<div class="site-branding">
-					<?php
-					the_custom_logo();
-					if ( is_front_page() && is_home() ) :
-						?>
-						<h1 class="site-title"><a class="sr-only" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php
-					else :
-						?>
-						<p class="site-title"><a class="sr-only" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-						<?php
-					endif;
-					$bryhub_retro_description = get_bloginfo( 'description', 'display' );
-					if ( $bryhub_retro_description || is_customize_preview() ) :
-						?>
-						<p class="site-description"><?php echo $bryhub_retro_description; /* WPCS: xss ok. */ ?></p>
-					<?php endif; ?>
-				</div><!-- .site-branding -->
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-						data-target="#primary-navbar-container" aria-controls="primary-navbar-container"
-						aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<?php
-				wp_nav_menu( array(
-					'theme_location'  => 'primary',
-					'depth'           => 2,
-					'container'       => 'div',
-					'container_class' => 'collapse navbar-collapse',
-					'container_id'    => 'primary-navbar-container',
-					'menu_class'      => 'navbar-nav w-100',
-					'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-					'walker'          => new WP_Bootstrap_Navwalker()
-				) );
-				?>
-			</nav>
+			
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

@@ -13,6 +13,7 @@
 
 </div><!-- #content -->
 
+<?php if (!is_front_page() && !is_home()) : ?>
 <footer class="site-footer">
     <div class="container">
         <div class="row">
@@ -22,6 +23,7 @@
         </div>
     </div>
 </footer>
+<?php endif; ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

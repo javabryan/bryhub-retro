@@ -9,9 +9,7 @@
 
 get_header();
 ?>
-<main>
-    <div class="bryhub-background-1" style="background:url('<?php echo esc_url(get_template_directory_uri() . '/inc/img/background-1.jpg')?>')">
-        <div class="bryhub-screen"></div>
+    <main style="background:url('<?php echo esc_url(get_template_directory_uri() . '/inc/img/background-1.jpg')?>')">
         <div class="sprites-container">
             <div class="sprites sprite-rocket">
                 <svg focusable="false">
@@ -30,25 +28,33 @@ get_header();
             </div>
             <div class="sprites sprite-enemy" style="background:url('<?php echo esc_url(get_template_directory_uri() . '/inc/img/spaceship.png')?>')"></div>
             <div class="sprites sprite-enemy-laser"></div>
-            <div class="sprites sprite-mercury"><svg focusable="false"><use href="#mercury"></use></svg></div>
-            <div class="sprites sprite-venus"><svg focusable="false"><use href="#venus"></use></svg></div>
-            <div class="sprites sprite-mars"><svg focusable="false"><use href="#mars"></use></svg></div>
-            <div class="sprites sprite-earth"><svg focusable="false"><use href="#earth"></use></svg></div>
-            <div class="sprites sprite-jupiter"><svg focusable="false"><use href="#jupiter"></use></svg></div>
-            <div class="sprites sprite-saturn"><svg focusable="false"><use href="#saturn"></use></svg></div>
-            <div class="sprites sprite-uranus"><svg focusable="false"><use href="#uranus"></use></svg></div>
-            <div class="sprites sprite-neptune"><svg focusable="false"><use href="#uranus"></use></svg></div>
         </div>
         <div class="title-container">
-            <div class="bryhub-site-title d-flex pb-0 mb-0">
-                <a class="sr-only" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html(bloginfo( 'name' )); ?></a>
-            </div>
-            <div class="description-container">
-                <span>Under construction, come back later!</span>
-            </div>
+            <h1 class="bryhub-site-title"><?php esc_html(bloginfo( 'name' )); ?></h1>
+            <nav class="navbar navbar-expand-md">
+					<div class="site-branding">
+					<?php
+					if (!is_front_page() && !is_home() ) : ?>
+						<p class="site-title"><a class="sr-only" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php
+					endif; ?>
+				</div><!-- .site-branding -->
+				<?php
+				wp_nav_menu( array(
+					'theme_location'  => 'primary',
+					'depth'           => 1,
+					'container'       => 'div',
+					'container_class' => 'div',
+					'container_id'    => 'primary-navbar-container',
+					'menu_class'      => 'navbar-nav w-100',
+					'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+					'walker'          => new WP_Bootstrap_Navwalker()
+				) );
+				?>
+			</nav>
         </div>
-    </div>
-</main>
+    </main>
 </div>
+
 
 <?php get_footer(); ?>
