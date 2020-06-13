@@ -144,3 +144,29 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'bryhub-retro' ),
 ) );
+
+// Adding menu icons to nav-walker
+add_filter('wp_nav_menu_objects', 'bryhub_add_menu_icons', 10, 2);
+
+function bryhub_add_menu_icons( $items, $args ) {
+		
+		// loop
+		foreach( $items as &$item ) {
+			
+			// vars
+			$icon = get_field('menu-item-icon', $item);
+			
+			
+			// append icon
+			if( $icon ) {
+				$bryhub_menu_post_title = $item->post_title; // Store current post title
+				$bryhub_new_menu_title = '<svg class="menu-item-icon"><use href="' . esc_url($icon) . '" focusable="false"></use></svg><span>' . esc_html($bryhub_menu_post_title) . '</span>';
+
+				$item->title = $bryhub_new_menu_title;
+			}
+			
+		}
+	
+	// return
+	return $items;
+}

@@ -1,7 +1,32 @@
-$primary: #fff8dc;
-$secondary: #ff9100;
-$background_gradient: linear-gradient(to bottom right, rgba(#161616, 0.82), rgba(#141414, 0.82), rgba(#000000, 0.6));
+//Structure
 $bryhub_grid_width: 0.25rem;
+
+//Animation variables
 $animation-length: 120s;
 $animation-fire-length: 60s;
 $animation-boom-length: 30s;
+
+//Color Pallette
+$color-primary: #008B78;
+$color-secondary:#007EC2;
+$color-thirds: #5A70C2;
+$color-fourths: #945CAF;
+$color-fifths: #007bac;
+$color-active: #FFA17A;
+
+//Color Pallette Light
+$color-light-amount: 25%;
+$color-light-primary: lighten($color-primary, $color-light-amount);
+$color-light-secondary: lighten($color-secondary, $color-light-amount);
+$color-light-thirds: lighten($color-thirds, $color-light-amount);
+$color-light-fourths: lighten($color-fourths, $color-light-amount);
+$color-light-fifths: lighten($color-fifths, $color-light-amount);
+
+//Font colors
+$color-font: #F8FFF8;
+$color-menu-item: rgb(202, 209, 202);
+$color-link: #9A5462;
+$color-link-hover: #D67D64;
+
+//Transitions
+$transition: all 0.3s cubic-bezier(.25,.8,.25,1);

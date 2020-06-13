@@ -1,11 +1,12 @@
+@import './variables';
+
 .sprites-container {
     position: absolute;
-    z-index:100;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: -1;
+    overflow: hidden;
 }
 
 .sprites {
@@ -37,6 +38,7 @@
     transform: rotate(110deg);
     animation-name: rocket-path;
     animation-timing-function: linear;
+    z-index: -10;
 }
 
 .rocket-fire {
@@ -69,12 +71,12 @@
 .sprite-enemy-laser {
     position: absolute;
     display: block;
-    height: 16px;
-    width: 100px;
+    height: 2rem;
+    width: 4rem;
     box-shadow: 0 0 13px 0 white;
     opacity: 0;
     border-radius: 50% 10% 10% 50%;
-    background-image: linear-gradient(to right top, #ff0000, #ff5e00, #d9ff00, #ffb700, #ffdd00);
+    background-image: linear-gradient(to right top, $color-active, darken($color-active, 10%), lighten($color-active, 10%));
     animation-name: enemy-laser;
     animation-duration: 120s;
     animation-timing-function: linear;
@@ -88,7 +90,7 @@
     left: -200%;
 
     svg {
-        fill: #ff8e00;
+        fill: $color-active;
         stroke: #000;
         stroke-miterlimit: 7;
         stroke-width:4;
@@ -303,7 +305,7 @@
     }
 
     12% {
-        filter: hue-rotate(1400deg) saturate(3);
+        filter: hue-rotate(1800deg);
         transform: rotatey(180deg) scale(3) rotate(0deg);
         top: 5%;
     }
@@ -343,7 +345,7 @@
 
     100% {
         top: -800px;
-        filter: hue-rotate(1400deg);
+        filter: hue-rotate(1800deg);
     }
 }
 
@@ -364,15 +366,15 @@
     }
     14% {
         top: 46%;
-        left: 14%;
+        left: 20%;
         opacity: 1;
         transform: rotatex(1080deg);
         animation-timing-function: linear;
     }
     15% {
-        top: 26%;
-        left: 75%;
-        transform: rotatex(5020deg);
+        top: 22%;
+        left: 80%;
+        transform: rotatex(6020deg);
         animation-timing-function: step-start;
         opacity: 1;
     }

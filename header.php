@@ -27,6 +27,20 @@
 <div id="page">
 	<?php if (!is_front_page() && !is_home()) : ?>
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bryhub-retro' ); ?></a>
+		<nav class="navbar navbar-expand-md">
+				<?php
+				wp_nav_menu( array(
+					'theme_location'  => 'primary',
+					'depth'           => 1,
+					'container'       => 'div',
+					'container_class' => 'navbar-container',
+                    'container_id'    => 'primary-navbar-container',
+					'menu_class'      => 'navbar-nav w-100',
+					'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+					'walker'          => new WP_Bootstrap_Navwalker()
+				) );
+				?>
+			</nav>
 	<?php endif; ?>
 	<header id="masthead" class="site-header">
 			

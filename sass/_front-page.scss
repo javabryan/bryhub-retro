@@ -1,3 +1,5 @@
+@import './variables';
+
 html,
 body,
 main {
@@ -6,7 +8,7 @@ main {
 }
 
 body {
-    background-color: rgb(20, 20, 20);
+    background-color: #000;
     overflow-x: hidden;
 }
 
@@ -16,8 +18,8 @@ main {
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background-size: cover; 
-    filter: hue-rotate(0deg);  
+    z-index: 2;
+    padding: 2rem;
 
     &::before {
         content: '';
@@ -26,132 +28,10 @@ main {
         left: 0;
         height: 100%;
         width: 100%;
-        z-index: -1;
-        background-color: rgb(0, 0, 0);
-        opacity: 0.85;
-    }
-}
-
-nav {
-    z-index: 100;
-    width: 100%;
-    text-align: center;
-
-    .navbar-nav {
-        margin: auto;
-    }
-
-    .nav-link {
-        margin: 0 1rem;
-
-        span {
-            color: rgb(180, 180, 180);
-        }
-    }
-}
-
-h1.bryhub-site-title {
-    font-size: 5rem;
-    line-height: 5rem;
-    text-align: center;
-    font-weight: 400;
-    color: #fff;
-    padding:0;
-    margin: 0.8rem 0;
-    background: -webkit-linear-gradient(right, #ffe4b1, #fbfffc, #d7dbd8, #fffdf7, #d4d4d4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.navbar-nav a {
-    position: relative;
-    padding: 0.6rem 0.8rem !important;
-    margin-right: 1.6rem !important;
-    margin-left: 1.6rem !important;
-
-    &::after,
-    &::before {
-        content:'';
-        position: absolute;
-        bottom: 0;
-        width: 0;
-        height: 0;
-        left: 50%;
-        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-        background-image: linear-gradient(to right top, #7800ff, #aa00f2, #cd00e5, #e900d9, #ff00ce);
-    }
-
-    &:hover,
-    &:focus {
-        outline: none;
-
-        span {
-            color: #fff;
-        }
-
-        &::before,
-        &::after {
-            height: 2px;
-            width: 3rem;
-            left: calc(50% - 1.5rem);
-            background-image: linear-gradient(to right top, #7800ff, #aa00f2, #cd00e5, #e900d9, #ff00ce);
-        }
-    }
-}
-
-.navbar-nav {
-
-    //Band-aid styles until I set up ACF and the hooks I need for custom link icons. These are currently hardcoded and is baaaddddd mmmmmk?.
-    li:nth-child(1) span::before,
-    li:nth-child(2) span::before,
-    li:nth-child(3) span::before,
-    li:nth-child(4) span::before {
-        content: '';
-        width: 48px;
-        height: 48px;
-        display: block;
-        margin: 0 auto;
-        -webkit-mask: url('inc/img/lab.svg') no-repeat 50% 50%;
-        mask: url('inc/img/lab.svg') no-repeat 50% 50%;
-        -webkit-mask-size: cover;
-        mask-size: cover;
-        background-color: red;
-    }
-
-    li:nth-child(1) span::before {
-        -webkit-mask: url('inc/img/lab.svg') no-repeat 50% 50%;
-        mask: url('inc/img/lab.svg') no-repeat 50% 50%;
-        background: #f79d00;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #64f38c, #f79d00);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #64f38c, #f79d00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
-
-    li:nth-child(2) span::before {
-        -webkit-mask: url('inc/img/github.svg') no-repeat 50% 50%;
-        mask: url('inc/img/github.svg') no-repeat 50% 50%;
-        background: #000000;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    }
-
-    li:nth-child(3) span::before {
-        -webkit-mask: url('inc/img/codepen.svg') no-repeat 50% 50%;
-        mask: url('inc/img/codepen.svg') no-repeat 50% 50%;
-        background: #000428;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
-
-    li:nth-child(4) span::before {
-        -webkit-mask: url('inc/img/about.svg') no-repeat 50% 50%;
-        mask: url('inc/img/about.svg') no-repeat 50% 50%;
-        background: #0B486B;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #F56217, #0B486B);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #F56217, #0B486B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
-
-    @media screen and (max-width: 768px) {
-        flex-direction: row;
+        background: url('inc/img/background-1.jpg');
+        background-size: cover;
+        filter: saturate(0);
+        opacity: 0.2;
+        z-index: -2;
     }
 }

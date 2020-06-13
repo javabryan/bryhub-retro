@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-    <main style="background:url('<?php echo esc_url(get_template_directory_uri() . '/inc/img/background-1.jpg')?>')">
+    <main>
         <div class="sprites-container">
             <div class="sprites sprite-rocket">
                 <svg focusable="false">
@@ -35,7 +35,7 @@ get_header();
 					<div class="site-branding">
 					<?php
 					if (!is_front_page() && !is_home() ) : ?>
-						<p class="site-title"><a class="sr-only" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<p class="site-title"><a class="sr-only" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html(bloginfo( 'name' )); ?></a></p>
 						<?php
 					endif; ?>
 				</div><!-- .site-branding -->
@@ -44,8 +44,8 @@ get_header();
 					'theme_location'  => 'primary',
 					'depth'           => 1,
 					'container'       => 'div',
-					'container_class' => 'div',
-					'container_id'    => 'primary-navbar-container',
+					'container_class' => 'navbar-container',
+                    'container_id'    => 'primary-navbar-container',
 					'menu_class'      => 'navbar-nav w-100',
 					'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
 					'walker'          => new WP_Bootstrap_Navwalker()

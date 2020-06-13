@@ -1,0 +1,247 @@
+nav {
+    z-index: 100;
+    width: 100%;
+    text-align: center;
+
+    .navbar-nav {
+        margin: auto;
+    }
+
+    .nav-link {
+        margin: 0 1rem;
+
+        span {
+            color: $color-menu-item;
+        }
+    }
+}
+
+.title-container {
+    z-index: 1;
+
+    h1.bryhub-site-title {
+        font-size: 5rem;
+        line-height: 5rem;
+        text-align: center;
+        font-weight: 400;
+        color: $color-font;
+        padding:0;
+        margin: 0.8rem 0;
+        background: -webkit-linear-gradient(right, #ffe4b1, #fbfffc, #d7dbd8, #fffdf7, #d4d4d4); //Derived from $color-font
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.navbar-nav {
+    a {
+        position: relative;
+        padding: 0.4rem 1.4rem !important;
+    
+        &::after,
+        &::before {
+            content:'';
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            left: 50%;
+            transition: $transition;
+
+        }
+    
+        &:hover,
+        &:focus {
+            outline: none;
+    
+            span {
+                color: #fff;
+            }
+    
+            &::before,
+            &::after {
+                height: 2px;
+                width: 3rem;
+                left: calc(50% - 1.5rem);
+            }
+        }
+    }
+
+    .menu-item-icon {
+        content: '';
+        display: block;
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 0.2rem auto;
+        transition: $transition;
+    }
+
+    li {
+        & a:hover,
+        & a:focus {
+            outline: none;
+    
+            span {
+                color: #fff;
+            }
+    
+            &::before,
+            &::after {
+                height: 2px;
+                width: 3rem;
+                left: calc(50% - 1.5rem);
+                background-color: $color-light-primary;
+            }
+
+            .menu-item-icon {
+                fill: $color-light-primary;
+            }
+        }
+    }
+
+    li:first-of-type {
+        .menu-item-icon {
+            fill: $color-primary;
+        }
+
+        & a:hover,
+        & a:focus {
+            &::before,
+            &::after {
+                background-color: $color-light-primary;
+            }
+
+            .menu-item-icon {
+                fill: $color-light-primary;
+            }
+        }
+    }
+
+    li:nth-of-type(2) {
+        .menu-item-icon {
+            fill: $color-secondary;
+        }
+
+        & a:hover,
+        & a:focus {
+            &::before,
+            &::after {
+                background-color: $color-light-secondary;
+            }
+
+            .menu-item-icon {
+                fill: $color-light-secondary;
+            }
+        }
+    }
+
+    li:nth-of-type(3) {
+        .menu-item-icon  {
+            fill: $color-thirds;
+        }
+
+        & a:hover,
+        & a:focus {
+            &::before,
+            &::after {
+                background-color: $color-light-thirds;
+            }
+
+            .menu-item-icon {
+                fill: $color-light-thirds;
+            }
+        }
+    }
+
+    li:nth-of-type(4) {
+        .menu-item-icon  {
+            fill: $color-fourths;
+        }
+
+        & a:hover,
+        & a:focus {
+            &::before,
+            &::after {
+                background-color: $color-light-fourths;
+            }
+
+            .menu-item-icon {
+                fill: $color-light-fourths;
+            }
+        }
+    }
+
+    li:nth-of-type(5) {
+        .menu-item-icon  {
+            fill: $color-fifths;
+        }
+
+        & a:hover,
+        & a:focus {
+            &::before,
+            &::after {
+                background-color: $color-light-fifths;
+            }
+
+            .menu-item-icon {
+                fill: $color-light-fifths;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    main {
+        padding: 0.4rem !important;
+        height: calc(100vh - 84px) !important;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    .navbar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 0.4rem;
+        background-image: linear-gradient(to bottom right, #181818, #141414);
+
+        .navbar-container {
+            width: 100%;
+
+            .navbar-nav {
+                display: flex;
+                flex-direction: row;
+                flex-shrink: 1;
+                justify-content: space-evenly;
+
+                li.menu-item {
+                    width: 25%;
+                    padding: 0;
+
+                    a {
+                        margin: 0;
+                        padding: 0.4rem !important;
+
+                        span {
+                            font-size: 0.8rem;
+                        }
+
+                        .menu-item-icon {
+                            width: 100%;
+                            max-height: 2rem;
+                        }
+                    }
+                }
+
+                li.active a::before,
+                li.active a::after {
+                    height: 2px;
+                    width: 3rem;
+                    left: calc(50% - 1.5rem);
+                    background-color: $color-active;
+                }
+            }
+        }
+    }
+}
