@@ -10,7 +10,6 @@ License URI: LICENSE
 Text Domain: bryhub-retro
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
-
 @import "~bootstrap/scss/functions";
 @import "variables";
 @import "~bootstrap/scss/variables";
@@ -30,7 +29,6 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @import "~bootstrap/scss/card";
 @import "~bootstrap/scss/media";
 @import "~bootstrap/scss/alert";
-
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 @import "normalize";
@@ -45,7 +43,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @import "site/site";
 @import "modules/infinite-scroll";
 @import "media/media";
-
+@import "variables";
 @import "fonts";
 @import "header";
 @import "front-page";

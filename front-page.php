@@ -30,28 +30,22 @@ get_header();
             <div class="sprites sprite-enemy-laser"></div>
         </div>
         <div class="title-container">
-            <h1 class="bryhub-site-title"><?php esc_html(bloginfo( 'name' )); ?></h1>
+            <h1 class="bryhub-site-title"><?php esc_html(bloginfo('name')); ?></h1>
+            <div class="bryhub-tagline"><?php esc_html(bloginfo('description')); ?></div>
             <nav class="navbar navbar-expand-md">
-					<div class="site-branding">
-					<?php
-					if (!is_front_page() && !is_home() ) : ?>
-						<p class="site-title"><a class="sr-only" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html(bloginfo( 'name' )); ?></a></p>
-						<?php
-					endif; ?>
-				</div><!-- .site-branding -->
-				<?php
-				wp_nav_menu( array(
-					'theme_location'  => 'primary',
-					'depth'           => 1,
-					'container'       => 'div',
-					'container_class' => 'navbar-container',
-                    'container_id'    => 'primary-navbar-container',
-					'menu_class'      => 'navbar-nav w-100',
-					'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-					'walker'          => new WP_Bootstrap_Navwalker()
-				) );
-				?>
-			</nav>
+      				<?php
+                      wp_nav_menu(array(
+                          'theme_location'  => 'primary',
+                          'depth'           => 1,
+                          'container'       => 'div',
+                          'container_class' => 'navbar-container',
+                          'container_id'    => 'primary-navbar-container',
+                          'menu_class'      => 'navbar-nav w-100',
+                          'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                          'walker'          => new WP_Bootstrap_Navwalker()
+                      ));
+                      ?>
+      			</nav>
         </div>
     </main>
 </div>

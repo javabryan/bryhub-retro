@@ -15,10 +15,11 @@
 
 <?php if (!is_front_page() && !is_home()) : ?>
 <footer class="site-footer">
+  <div>
     <div class="container">
         <div class="row">
             <div class="col-12">
-				<?php get_template_part( 'template-parts/footer', 'site-info' ) ?>
+				    <?php get_template_part('template-parts/footer', 'site-info') ?>
             </div>
         </div>
     </div>

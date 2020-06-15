@@ -1,432 +1,445 @@
-@import './variables';
-
 .sprites-container {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
+  position: absolute;
+  height  : 100%;
+  width   : 100%;
+  top     : 0;
+  left    : 0;
+  overflow: hidden;
 }
 
 .sprites {
-    position: absolute;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    animation-duration: $animation-length;
-    animation-timing-function: linear;
-    filter: none;
-    will-change: transform;
-    will-change: opacity;
-    will-change: left, top;
+  position                 : absolute;
+  background-size          : contain !important;
+  background-repeat        : no-repeat !important;
+  animation-duration       : $animation-length;
+  animation-timing-function: linear;
+  will-change              : transform;
+  will-change              : opacity;
+  will-change              : left, top;
 }
 
 .sprites svg {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top:0;
-    left: 0;
+  position: absolute;
+  height  : 100%;
+  width   : 100%;
+  top     : 0;
+  left    : 0;
 }
 
 .sprite-rocket {
-    position: relative;
-    height: 120px;
-    width: 68px;
-    top: 30%;
-    left: -20%;
-    transform: rotate(110deg);
-    animation-name: rocket-path;
-    animation-timing-function: linear;
-    z-index: -10;
+  position                 : relative;
+  height                   : 120px;
+  width                    : 68px;
+  top                      : 30%;
+  left                     : -20%;
+  transform                : rotate(110deg);
+  animation-name           : rocket-path;
+  animation-timing-function: linear;
+  z-index                  : -10;
 }
 
 .rocket-fire {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 80%;
-    left:2px;
-    transform: rotate(90deg) scale(2);
-    z-index: -1;
-    animation-name: rocket-fire-path;
-    animation-duration: $animation-fire-length; 
-    animation-timing-function: step-end;
-    transition: 0;
+  position                 : absolute;
+  height                   : 100%;
+  width                    : 100%;
+  top                      : 80%;
+  left                     : 2px;
+  transform                : rotate(90deg) scale(2);
+  z-index                  : -1;
+  animation-name           : rocket-fire-path;
+  animation-duration       : $animation-fire-length;
+  animation-timing-function: step-end;
+  transition               : 0;
 }
 
 .sprite-enemy {
-    position: relative;
-    height: 120px;
-    width: 88px;
-    margin: 0;
-    top: 10%;
-    left: -20%;
-    transform: rotatey(180deg);
-    animation-name: enemy-path;
-    animation-timing-function: linear;
-    z-index: 0;
+  position                 : relative;
+  height                   : 120px;
+  width                    : 88px;
+  margin                   : 0;
+  top                      : 10%;
+  left                     : -20%;
+  transform                : rotatey(180deg);
+  animation-name           : enemy-path;
+  animation-timing-function: linear;
+  z-index                  : 0;
 }
 
 .sprite-enemy-laser {
-    position: absolute;
-    display: block;
-    height: 2rem;
-    width: 4rem;
-    box-shadow: 0 0 13px 0 white;
-    opacity: 0;
-    border-radius: 50% 10% 10% 50%;
-    background-image: linear-gradient(to right top, $color-active, darken($color-active, 10%), lighten($color-active, 10%));
-    animation-name: enemy-laser;
-    animation-duration: 120s;
-    animation-timing-function: linear;
+  position                 : absolute;
+  display                  : block;
+  height                   : 2rem;
+  width                    : 4rem;
+  box-shadow               : 0 0 13px 0 white;
+  opacity                  : 0;
+  border-radius            : 50% 10% 10% 50%;
+  background-image         : linear-gradient(to right top, $color-active, darken($color-active, 10%), lighten($color-active, 10%));
+  animation-name           : enemy-laser;
+  animation-duration       : 120s;
+  animation-timing-function: linear;
 }
 
 .sprite-boom {
-    position: absolute;
-    height: 500%;
-    width: 500%;
-    top: -220%;
-    left: -200%;
+  position: absolute;
+  height  : 500%;
+  width   : 500%;
+  top     : -220%;
+  left    : -200%;
 
-    svg {
-        fill: $color-active;
-        stroke: #000;
-        stroke-miterlimit: 7;
-        stroke-width:4;
-        opacity: 0;
-        animation-name: boom-path;
-        animation-duration: $animation-boom-length;
-        animation-timing-function: step-end;
-    }
+  svg {
+    fill                     : $color-active;
+    stroke                   : #000;
+    stroke-miterlimit        : 7;
+    stroke-width             : 4;
+    opacity                  : 0;
+    animation-name           : boom-path;
+    animation-duration       : $animation-boom-length;
+    animation-timing-function: step-end;
+  }
 }
-
 @keyframes rocket-path {
-    0% {
-        top: 30%;
-        left: -75%;
-    }
+  0% {
+    top : 30%;
+    left: -75%;
+  }
 
-    2% {
-        top: 30%;
-        left:20%;
-        transform: rotate(95deg);
-    }
+  2% {
+    top      : 30%;
+    left     : 20%;
+    transform: rotate(95deg);
+  }
 
-    3% {
-        transform: rotate(110deg);
-    }
+  3% {
+    transform: rotate(110deg);
+  }
 
-    4% {
-        top: 55%;
-        left: 45%;
-        transform: rotate(50deg);
-    }
+  4% {
+    top      : 55%;
+    left     : 45%;
+    transform: rotate(50deg);
+  }
 
-    5% {
-        top: 25%;
-        left: 58%;
-        transform: rotate(100deg);
-    }
+  5% {
+    top      : 25%;
+    left     : 58%;
+    transform: rotate(100deg);
+  }
 
-    6% {
-        top: 35%;
-        left: 195%;
-        transform: rotate(80deg);
-    }
+  6% {
+    top      : 35%;
+    left     : 195%;
+    transform: rotate(80deg);
+  }
 
-    7% {
-        left: 115%;
-        transform: rotate(-100deg);
-    }
+  7% {
+    left     : 115%;
+    transform: rotate(-100deg);
+  }
 
-    8% {
-        top: 55%;
-        left: -110%;
-        transform: rotate(-100deg);
-    }
+  8% {
+    top      : 55%;
+    left     : -110%;
+    transform: rotate(-100deg);
+  }
 
-    9% {
-        top: 10%;
-        left: -25%;
-        transform: rotate(100deg);
-    }
+  9% {
+    top      : 10%;
+    left     : -25%;
+    transform: rotate(100deg);
+  }
 
-    10% {
-        left: 185%;
-        top: 35%;
-        transform: rotate(100deg);
-    }
+  10% {
+    left     : 185%;
+    top      : 35%;
+    transform: rotate(100deg);
+  }
 
-    11% {
-        transform: rotate(-100deg);
-        left:110%;
-        animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
+  11% {
+    transform                : rotate(-100deg);
+    left                     : 110%;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
 
-    13% {
-        transform: rotate(-100deg);
-        top: 10%;
-        left: 80%;
-        transform: rotate(0deg);
-        animation-timing-function: cubic-bezier(0.48, -0.25, 0.25, 1);
-    }
+  13% {
+    transform                : rotate(-100deg);
+    top                      : 10%;
+    left                     : 80%;
+    transform                : rotate(0deg);
+    animation-timing-function: cubic-bezier(0.48, -0.25, 0.25, 1);
+  }
 
-    14% {
-        top: 15%;
-        left: 82%;
-        filter: none;
-        animation-timing-function: step-end;
-    }
+  14% {
+    top                      : 15%;
+    left                     : 82%;
+    filter: none;
+    animation-timing-function: step-end;
+  }
 
-    15% {
-        top: 13%;
-        left: 82%;
-        transform: rotate(0deg);
-        animation-timing-function: step-end;
-    }
+  15% {
+    top                      : 13%;
+    left                     : 82%;
+    transform                : rotate(0deg);
+    animation-timing-function: step-end;
+  }
 
-    16% {
-        top: 13%;
-        left: 82%;
-        filter: sepia(10);
-        transform: rotate(0deg);
-        animation-timing-function: linear;
-    }
+  16% {
+    top                      : 13%;
+    left                     : 82%;
+    filter: sepia(10);
+    transform                : rotate(0deg);
+    animation-timing-function: linear;
+  }
 
-    23% {
-        top: 90%;
-        left: 90%;
-        transform: rotate(165deg) scale(0);
-    }
-    100% {
-        top: 70%;
-        left: 90%;
-        transform: rotate(165deg) scale(0);
-    }
+  23% {
+    top      : 90%;
+    left     : 90%;
+    transform: rotate(165deg) scale(0);
+  }
+
+  100% {
+    top      : 70%;
+    left     : 90%;
+    transform: rotate(165deg) scale(0);
+  }
 }
-
 @keyframes rocket-fire-path {
-    0% {
-        top: 90%;
-        opacity:1;
-        transform: rotate(90deg) scale(2);
-    }
-    4% {
-        top: 60%;
-        opacity: 0;
-        transform: rotate(90deg) scale(1);
-    }
-    8% {
-        opacity: 1;
-    }
-    9% {
-        opacity: 0;
-    }
-    10% {
-        top: 90%;
-        opacity: 1;
-        transform: rotate(90deg) scale(2.2);
-    }
+  0% {
+    top      : 90%;
+    opacity  : 1;
+    transform: rotate(90deg) scale(2);
+  }
 
-    12% {
-        top: 120%;
-        transform: rotate(90deg) scale(3);
-    }
+  4% {
+    top      : 60%;
+    opacity  : 0;
+    transform: rotate(90deg) scale(1);
+  }
 
-    22% {
-        top: 50%;
-        transform: rotate(90deg) scale(1);
-    }
+  8% {
+    opacity: 1;
+  }
 
-    26% {
-        top: 40%;
-        transform: rotate(90deg) scale(0.8);
-    }
+  9% {
+    opacity: 0;
+  }
 
-    27% {
-        transform: rotate(90deg) scale(1);
-    }
+  10% {
+    top      : 90%;
+    opacity  : 1;
+    transform: rotate(90deg) scale(2.2);
+  }
 
-    28% {
-        transform: rotate(90deg) scale(0.8);
-    }
+  12% {
+    top      : 120%;
+    transform: rotate(90deg) scale(3);
+  }
 
-    30% {
-        transform: rotate(90deg) scale(1);
-    }
+  22% {
+    top      : 50%;
+    transform: rotate(90deg) scale(1);
+  }
 
-    33% {
-        transform: rotate(90deg) scale(0.8);
-    }
+  26% {
+    top      : 40%;
+    transform: rotate(90deg) scale(0.8);
+  }
 
-    35% {
-        transform: rotate(90deg) scale(1);
-    }
+  27% {
+    transform: rotate(90deg) scale(1);
+  }
 
-    38% {
-        transform: scale(0);
-    }
+  28% {
+    transform: rotate(90deg) scale(0.8);
+  }
+
+  30% {
+    transform: rotate(90deg) scale(1);
+  }
+
+  33% {
+    transform: rotate(90deg) scale(0.8);
+  }
+
+  35% {
+    transform: rotate(90deg) scale(1);
+  }
+
+  38% {
+    transform: scale(0);
+  }
 }
-
 @keyframes enemy-path {
-    0% {left: -20%;}
-    3% {top: 12%;}
-    4% {top: 8%;}
-    5% {top: 12%;}
-    6% {
-        left: 6%;
-        transform:rotatey(180deg);
-    }
+  0% {
+    left: -20%;
+  }
 
-    7% {
-        transform:rotatey(180deg) rotate(0deg);
-        animation-timing-function: step-end;
-    }
+  3% {
+    top: 12%;
+  }
 
-    8% {
-        transform:rotatey(0deg);
-        animation-timing-function: step-end;
-    }
+  4% {
+    top: 8%;
+  }
 
-    9% {
-        top: 0%;
-        left: 5%;
-        transform:rotatey(360deg) rotate(0deg);
-    }
+  5% {
+    top: 12%;
+  }
 
-    10% {
-        transform:rotatey(-180deg);
-    }
+  6% {
+    left     : 6%;
+    transform: rotatey(180deg);
+  }
 
-    11% {
-        filter: hue-rotate(0deg);
-        transform: rotatey(180deg) scale(1) rotate(0deg);
-    }
+  7% {
+    transform                : rotatey(180deg) rotate(0deg);
+    animation-timing-function: step-end;
+  }
 
-    12% {
-        filter: hue-rotate(1800deg);
-        transform: rotatey(180deg) scale(3) rotate(0deg);
-        top: 5%;
-    }
+  8% {
+    transform                : rotatey(0deg);
+    animation-timing-function: step-end;
+  }
 
-    13% {
-        transform: rotatey(180deg) scale(3) rotate(0deg);
-        animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-    }
+  9% {
+    top      : 0;
+    left     : 5%;
+    transform: rotatey(360deg) rotate(0deg);
+  }
 
-    14% {
-        transform: rotatey(180deg) scale(3) rotate(10deg);
-        top: 25%;
-        left: 10%;
-        animation-timing-function: step-start;
-    }
+  10% {
+    transform: rotatey(-180deg);
+  }
 
-    15% {
-        transform: rotatey(180deg) scale(3) rotate(10deg);
-        left: 9%;
-        top: 26%;
-        animation-timing-function: linear;
-    }
+  11% {
+    filter: hue-rotate(0deg);
+    transform: rotatey(180deg) scale(1) rotate(0deg);
+  }
 
-    16% {
-        transform: rotatey(180deg) scale(2) rotate(20deg);
-        left: 6%;
-        top: 28%;
-        animation-timing-function: cubic-bezier(0.19, -0.35, 0.22, 1);
-    }
+  12% {
+    filter: hue-rotate(1800deg);
+    transform: rotatey(180deg) scale(3) rotate(0deg);
+    top      : 5%;
+  }
 
-    17% {
-        left: 30%;
-        top: -800px;
-        transform: rotatey(180deg) scale(1.5);
-        animation-timing-function: cubic-bezier(0.25, -0.38, 0.735, 1);
-    }
+  13% {
+    transform                : rotatey(180deg) scale(3) rotate(0deg);
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
 
-    100% {
-        top: -800px;
-        filter: hue-rotate(1800deg);
-    }
+  14% {
+    transform                : rotatey(180deg) scale(3) rotate(10deg);
+    top                      : 25%;
+    left                     : 10%;
+    animation-timing-function: step-start;
+  }
+
+  15% {
+    transform                : rotatey(180deg) scale(3) rotate(10deg);
+    left                     : 9%;
+    top                      : 26%;
+    animation-timing-function: linear;
+  }
+
+  16% {
+    transform                : rotatey(180deg) scale(2) rotate(20deg);
+    left                     : 6%;
+    top                      : 28%;
+    animation-timing-function: cubic-bezier(0.19, -0.35, 0.22, 1);
+  }
+
+  17% {
+    left                     : 30%;
+    top                      : -800px;
+    transform                : rotatey(180deg) scale(1.5);
+    animation-timing-function: cubic-bezier(0.25, -0.38, 0.735, 1);
+  }
+
+  100% {
+    top: -800px;
+    filter: hue-rotate(1800deg);
+  }
 }
-
 @keyframes enemy-laser {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
+  12% {
+    transform: rotatex(0deg);
+  }
 
-    12% {
-        transform: rotatex(0deg);
-    }
-    13% {
-        opacity: 0;
-        transform: rotatex(200deg);
-        left: 0;
-        animation-timing-function: step-end;
-    }
-    14% {
-        top: 46%;
-        left: 20%;
-        opacity: 1;
-        transform: rotatex(1080deg);
-        animation-timing-function: linear;
-    }
-    15% {
-        top: 22%;
-        left: 80%;
-        transform: rotatex(6020deg);
-        animation-timing-function: step-start;
-        opacity: 1;
-    }
-    16% {
-        opacity: 0;
-        animation-timing-function: step-start;
-    }
-    100% {
-        opacity: 0;
-    }
+  13% {
+    opacity                  : 0;
+    transform                : rotatex(200deg);
+    left                     : 0;
+    animation-timing-function: step-end;
+  }
+
+  14% {
+    top                      : 46%;
+    left                     : 20%;
+    opacity                  : 1;
+    transform                : rotatex(1080deg);
+    animation-timing-function: linear;
+  }
+
+  15% {
+    top                      : 22%;
+    left                     : 80%;
+    transform                : rotatex(6020deg);
+    animation-timing-function: step-start;
+    opacity                  : 1;
+  }
+
+  16% {
+    opacity                  : 0;
+    animation-timing-function: step-start;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
-
 @keyframes boom-path {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    60% {
-        opacity: 1;
-        transform: rotate(12deg) scale(1.2);
-    }
+  60% {
+    opacity  : 1;
+    transform: rotate(12deg) scale(1.2);
+  }
 
-    61% {
-        transform: rotate(-12deg) scale(1);
-    }
+  61% {
+    transform: rotate(-12deg) scale(1);
+  }
 
-    62% {
-        transform: rotate(12deg) scale(1.2);
-    }
+  62% {
+    transform: rotate(12deg) scale(1.2);
+  }
 
-    64% {
-        transform: rotate(-12deg) scale(1);
-        animation-timing-function: linear;
-        opacity: 1;
-    }
+  64% {
+    transform                : rotate(-12deg) scale(1);
+    animation-timing-function: linear;
+    opacity                  : 1;
+  }
 
-    65% {
-        opacity: 0;
-    }
+  65% {
+    opacity: 0;
+  }
 }
-
 @keyframes enemy-surprise {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    6% {
-        opacity: 1;
-        animation-timing-function: step-start;
-    }
-    7% {
-        opacity: 0;
-        animation-timing-function: linear;
-    }
+  6% {
+    opacity                  : 1;
+    animation-timing-function: step-start;
+  }
+
+  7% {
+    opacity                  : 0;
+    animation-timing-function: linear;
+  }
 }

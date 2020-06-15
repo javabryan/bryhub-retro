@@ -1,32 +1,38 @@
+//
 //Structure
-$bryhub_grid_width: 0.25rem;
-
+//
+$bryhub_grid_width    : 0.25rem; //
+//
 //Animation variables
-$animation-length: 120s;
+//
+$animation-length     : 120s;
 $animation-fire-length: 60s;
-$animation-boom-length: 30s;
-
+$animation-boom-length: 30s; //
+//
 //Color Pallette
-$color-primary: #008B78;
-$color-secondary:#007EC2;
-$color-thirds: #5A70C2;
-$color-fourths: #945CAF;
-$color-fifths: #007bac;
-$color-active: #FFA17A;
-
+//
+$color-primary        : #008B78;
+$color-secondary      : #007ec2;
+$color-thirds         : #5a70c2;
+$color-fourths        : #945caf;
+$color-fifths         : #007bac;
+$color-active         : #ffa17a; //
+//
 //Color Pallette Light
-$color-light-amount: 25%;
-$color-light-primary: lighten($color-primary, $color-light-amount);
+//
+$color-light-amount   : 25%;
+$color-light-primary  : lighten($color-primary, $color-light-amount);
 $color-light-secondary: lighten($color-secondary, $color-light-amount);
-$color-light-thirds: lighten($color-thirds, $color-light-amount);
-$color-light-fourths: lighten($color-fourths, $color-light-amount);
-$color-light-fifths: lighten($color-fifths, $color-light-amount);
-
-//Font colors
-$color-font: #F8FFF8;
-$color-menu-item: rgb(202, 209, 202);
-$color-link: #9A5462;
-$color-link-hover: #D67D64;
-
-//Transitions
-$transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+$color-light-thirds   : lighten($color-thirds, $color-light-amount);
+$color-light-fourths  : lighten($color-fourths, $color-light-amount);
+$color-light-fifths   : lighten($color-fifths, $color-light-amount); //Font colors
+$color-font           : #f8fff8;
+$color-menu-item      : #A1A1A1;
+$color-link           : #9a5462;
+$color-link-hover     : #d67d64; //Transitions
+$transition           : all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); //
+//
+//Font Colors
+//
+$color-font           : #F8F7F1;
+$color-font-secondary : #969696;
