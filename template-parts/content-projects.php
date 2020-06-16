@@ -8,52 +8,43 @@
  */
 
 ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('col-12 col-md-6 col-lg-4 col-xl-3'); ?>>
+		<header class="entry-header">
+			<a href='<?php echo esc_url(get_permalink()) ?>' rel="bookmark">
+				<?php bryhub_retro_post_thumbnail(); ?>
+			</a>
+			<?php
+            if (is_singular()) :
+                the_title('<h1 class="entry-title">', '</h1>');
+            else :
+                the_title('<h2 class="entry-title">', '</h2>');
+            endif; ?>
+		</header><!-- .entry-header -->
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-        if (is_singular()) :
-            the_title('<h1 class="entry-title">', '</h1>');
-        else :
-            the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-        endif;
+		<div class="entry-content">
+			<?php
+            the_excerpt(sprintf(
+                wp_kses(
+                    /* translators: %s: Name of current post. Only visible to screen readers */
+                    __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'bryhub-retro'),
+                    array(
+                        'span' => array(
+                            'class' => array(),
+                        ),
+                    )
+                ),
+                get_the_title()
+            ));
 
-        if ('post' === get_post_type()) :
+            wp_link_pages(array(
+                'before' => '<div class="page-links">' . esc_html__('Pages:', 'bryhub-retro'),
+                'after'  => '</div>',
+            ));
             ?>
-			<div class="entry-meta">
-				<?php
-                bryhub_retro_posted_on();
-                bryhub_retro_posted_by();
-                ?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+		</div><!-- .entry-content -->
 
-	<?php bryhub_retro_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-        the_content(sprintf(
-                    wp_kses(
-                /* translators: %s: Name of current post. Only visible to screen readers */
-                __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'bryhub-retro'),
-                        array(
-                    'span' => array(
-                        'class' => array(),
-                    ),
-                )
-                    ),
-                    get_the_title()
-                ));
-
-        wp_link_pages(array(
-            'before' => '<div class="page-links">' . esc_html__('Pages:', 'bryhub-retro'),
-            'after'  => '</div>',
-        ));
-        ?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php bryhub_retro_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+		<footer class="entry-footer">
+			<?php bryhub_retro_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
+	</a>
 </article><!-- #post-<?php the_ID(); ?> -->

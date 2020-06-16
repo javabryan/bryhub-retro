@@ -11,6 +11,69 @@ h1 a {
   font-family: 'Architects Daughter', cursive;
 }
 
-h2 {
+h2,
+h2 a {
   font-family: 'Acme', sans-serif;
+}
+
+h1,
+h1.bryhub-site-title {
+  padding                : 0.4rem;
+  margin                 : 0;
+  text-align             : center;
+  font-weight            : 400;
+  font-size              : 5rem;
+  color                  : $color-font;
+  line-height            : 5.2rem;
+  background             : -webkit-linear-gradient(right, #ffe4b1, #fbfffc, #d7dbd8, #fffdf7, #d4d4d4); //Derived from $color-font
+  -webkit-background-clip: text;
+  background-clip        : text;
+  -webkit-text-fill-color: transparent;
+  text-shadow            : -1px -1px 1px $color-font, 2px 2px 1px #333;
+}
+
+h1 {
+  font-size  : 2.4rem;
+  line-height: 2.4rem;
+  padding    : 0;
+}
+
+.archive-description {
+  display        : flex;
+  justify-content: center;
+}
+
+.archive-description p,
+.bryhub-tagline {
+  position      : relative;
+  text-align    : center;
+  padding       : 0.8rem 1.6rem;
+  margin        : 0.4rem 2.4rem;
+  color         : $color-menu-item;
+  letter-spacing: 0.02rem;
+
+  &:after,
+  &:before {
+    content         : '';
+    top             : 0;
+    position        : absolute;
+    width           : 1px;
+    height          : 60%;
+    transform       : translateY(30%);
+    opacity         : 0.8;
+    background-image: linear-gradient($color-primary, $color-fifths);
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+}
+
+.archive-description p {
+  margin : 0 !important;
+  padding: 0.4rem 0.8rem !important;
 }

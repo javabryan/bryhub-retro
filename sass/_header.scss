@@ -181,51 +181,6 @@ nav.navbar {
   z-index         : 1;
   background-color: rgba(0,0,0, 0.4);
   border-radius   : 1rem;
-
-  h1.bryhub-site-title {
-    padding                : 0.4rem;
-    margin                 : 0;
-    text-align             : center;
-    font-weight            : 400;
-    font-size              : 5rem;
-    color                  : $color-font;
-    line-height            : 5.2rem;
-    background             : -webkit-linear-gradient(right, #ffe4b1, #fbfffc, #d7dbd8, #fffdf7, #d4d4d4); //Derived from $color-font
-    -webkit-background-clip: text;
-    background-clip        : text;
-    -webkit-text-fill-color: transparent;
-    text-shadow            : -1px -1px 1px $color-font, 2px 2px 1px #333;
-  }
-
-  .bryhub-tagline {
-    position      : relative;
-    text-align    : center;
-    padding       : 0.8rem 1.6rem;
-    margin        : 0.4rem 2.4rem;
-    color         : $color-menu-item;
-    font-size     : 1rem;
-    letter-spacing: 0.02rem;
-
-    &:after,
-    &:before {
-      content         : '';
-      top             : 0;
-      position        : absolute;
-      width           : 1px;
-      height          : 60%;
-      transform       : translateY(30%);
-      opacity         : 0.8;
-      background-image: linear-gradient($color-primary, $color-fifths);
-    }
-
-    &:before {
-      left: 0;
-    }
-
-    &:after {
-      right: 0;
-    }
-  }
 }
 @media screen and (min-width: 768px) {
   nav.navbar-general {
@@ -240,7 +195,7 @@ nav.navbar {
         flex-direction: row;
 
         li.menu-item {
-          padding: 0.2rem 0 0;
+          padding: 1px 0 0;
           margin : 0 0.4rem;
 
           a {
@@ -301,11 +256,13 @@ nav.navbar {
   }
 }
 @media screen and (max-width: 767px) {
-  main {
-    padding   : 0.4rem !important;
-    height    : calc(100vh - 84px) !important;
-    overflow-x: hidden;
-    overflow-y: scroll;
+  body.home .site-content main {
+    padding-bottom: 86px !important;
+  }
+
+  body {
+    margin-bottom : 86px;
+    padding-bottom: 1rem;
   }
 
   .title-container .bryhub-tagline {
@@ -313,7 +270,7 @@ nav.navbar {
   }
 
   nav.navbar {
-    position        : absolute;
+    position        : fixed;
     bottom          : 0;
     left            : 0;
     padding         : 0.4rem !important;
