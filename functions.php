@@ -25,6 +25,13 @@ if (! function_exists('bryhub_retro_setup')) :
          * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
          */
         add_theme_support('post-thumbnails');
+        add_theme_support('title-tag');
+        add_theme_support('custom-post-thumbnail', array(
+            'height' => 480,
+            'width'  => 720,
+        ));
+
+        set_post_thumbnail_size(400, 400);
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
@@ -42,7 +49,7 @@ if (! function_exists('bryhub_retro_setup')) :
 
         // Set up the WordPress core custom background feature.
         add_theme_support('custom-background', apply_filters('bryhub_retro_custom_background_args', array(
-            'default-color' => 'ffffff',
+            'default-color' => '#000',
             'default-image' => '',
         )));
 

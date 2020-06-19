@@ -1,7 +1,45 @@
 .archive {
   header.page-header {
-    margin-bottom   : 2.4rem;
-    padding         : 0.8rem;
-    background-image: linear-gradient(to right,#181818,#141414);
+    margin : 2.4rem;
+    padding: 0.8rem;
+  }
+
+  .project-article-row {
+    article {
+      padding-bottom: 30px;
+    }
+
+    .article-card {
+      padding                   : 0;
+      background-image          : linear-gradient(to top right, #181818, #141414, #0e0e0e, #0a0a0a, #090909);
+      border-radius             : 0.4rem;
+      border-bottom-right-radius: 2rem;
+      height                    : 100%;
+      overflow                  : hidden;
+
+      .project-post-thumbnail {
+        height           : 160px;
+        width            : auto;
+        background-size  : cover;
+        background-repeat: no-repeat;
+      }
+
+      .entry-header {
+        .entry-title {
+          padding    : 0.8rem 0.8rem 0;
+          font-size  : 1.6rem;
+          line-height: 1.6rem;
+        }
+      }
+
+      .entry-content {
+        margin-top: 0;
+        padding   : 0 0.8rem;
+
+        p {
+          color: #9E9E9E;
+        }
+      }
+    }
   }
 }

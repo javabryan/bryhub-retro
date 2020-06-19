@@ -77,3 +77,12 @@ h1 {
   margin : 0 !important;
   padding: 0.4rem 0.8rem !important;
 }
+
+a {
+  color: #dbd8d8 !important;
+
+  &:hover {
+    color          : $color-active !important;
+    text-decoration: none;
+  }
+}

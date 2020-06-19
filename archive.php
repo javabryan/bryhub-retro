@@ -23,7 +23,7 @@ get_header();
 			</header><!-- .page-header -->
 
 			<div class="container">
-				<div class="row">
+				<div class="row project-article-row">
 			<?php
             /* Start the Loop */
             while (have_posts()) :

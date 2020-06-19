@@ -3,6 +3,25 @@ body {
   overflow-x      : hidden;
 }
 
+.archive,
+.home {
+  main {
+    &::before {
+      content        : '';
+      position       : fixed;
+      top            : 0;
+      left           : 0;
+      height         : 100%;
+      width          : 100%;
+      background     : url("inc/img/background-1.jpg");
+      background-size: cover;
+      opacity        : 0.2;
+      z-index        : -2;
+      filter : saturate(0);
+    }
+  }
+}
+
 .home {
   overflow-y: hidden;
 
@@ -14,19 +33,5 @@ body {
     width          : 100vw;
     z-index        : 2;
     padding        : 2rem;
-
-    &::before {
-      content        : '';
-      position       : absolute;
-      top            : 0;
-      left           : 0;
-      height         : 100%;
-      width          : 100%;
-      background     : url('inc/img/background-1.jpg');
-      background-size: cover;
-      opacity        : 0.2;
-      z-index        : -2;
-      filter : saturate(0);
-    }
   }
 }
