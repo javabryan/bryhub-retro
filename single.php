@@ -13,7 +13,6 @@ get_header();
 		<main id="main" class="site-main">
 
 		<?php
-        echo print_r(get_post_type());
         while (have_posts()) :
             the_post();
 

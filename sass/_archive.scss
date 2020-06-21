@@ -10,25 +10,62 @@
     }
 
     .article-card {
+      position                  : relative;
       padding                   : 0;
-      background-image          : linear-gradient(to top right, #181818, #141414, #0e0e0e, #0a0a0a, #090909);
+      background-image          : linear-gradient(to top left, #1a1a1a, #141414, #121212, #0f0f0f, #090909);
       border-radius             : 0.4rem;
       border-bottom-right-radius: 2rem;
       height                    : 100%;
+      border-bottom             : 1px solid #222;
+      border-right              : 1px solid #222;
       overflow                  : hidden;
 
-      .project-post-thumbnail {
-        height           : 160px;
-        width            : auto;
-        background-size  : cover;
-        background-repeat: no-repeat;
+      .edit-link {
+        position        : absolute;
+        background-color: black;
+        padding         : 0.4rem;
+        margin-left     : 0.8rem;
+        border-bottom   : 1px solid $color-active;
+        z-index         : 2;
       }
 
       .entry-header {
-        .entry-title {
-          padding    : 0.8rem 0.8rem 0;
-          font-size  : 1.6rem;
-          line-height: 1.6rem;
+        a {
+          .project-post-thumbnail-container {
+            position: relative;
+            height  : 160px;
+            width   : auto;
+            overflow: hidden;
+
+            .project-post-thumbnail {
+              position           : absolute;
+              height             : 100%;
+              width              : 100%;
+              background-size    : cover;
+              background-repeat  : no-repeat;
+              background-position: center;
+              top                : 50%;
+              left               : 50%;
+              transform          : translate(-50%, -50%) scale(1);
+              transition         : $transition;
+            }
+            @media screen and (max-width: 768px) {
+              height: 280px;
+            }
+          }
+
+          .entry-title {
+            padding    : 0.8rem 0.8rem 0;
+            font-size  : 1.6rem;
+            line-height: 1.6rem;
+          }
+
+          &:focus,
+          &:hover {
+            .project-post-thumbnail {
+              transform: translate(-50%, -50%) scale(1.04);
+            }
+          }
         }
       }
 
@@ -37,7 +74,31 @@
         padding   : 0 0.8rem;
 
         p {
-          color: #9E9E9E;
+          color: $color-off-text;
+        }
+      }
+
+      .category-list {
+        list-style    : none;
+        padding       : 0 0.8rem 0.8rem;
+        margin        : 0;
+        font-size     : 0.8rem;
+        font-style    : italic;
+        letter-spacing: 0;
+
+        li {
+          margin-bottom: 0.2rem;
+
+          a {
+            padding    : 0 0.4rem;
+            transition : $transition;
+            border-left: 1px solid #444;
+
+            &:focus,
+            &:hover {
+              border-left: 1px solid $color-active;
+            }
+          }
         }
       }
     }

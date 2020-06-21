@@ -224,7 +224,7 @@ function create_projects_cpt()
         'labels' => $labels,
         'menu_icon' => 'dashicons-lightbulb',
         'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'author', 'trackbacks', 'page-attributes', 'post-formats', 'custom-fields'),
-        'taxonomies' => array(),
+        'taxonomies' => array('category'),
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
