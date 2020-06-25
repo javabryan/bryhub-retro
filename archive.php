@@ -6,12 +6,11 @@
  *
  * @package bryhub-retro
  */
-
 get_header();
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main container">
 
 		<?php if (have_posts()) : ?>
 
@@ -21,9 +20,7 @@ get_header();
                 the_archive_description('<div class="archive-description">', '</div>');
                 ?>
 			</header><!-- .page-header -->
-
-			<div class="container">
-				<div class="row project-article-row">
+			<div class="row project-article-row">
 			<?php
             /* Start the Loop */
             while (have_posts()) :
@@ -46,7 +43,6 @@ get_header();
 
         endif;
         ?>
-				</div>
 			</div>
 
 		</main><!-- #main -->

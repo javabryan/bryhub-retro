@@ -1,0 +1,77 @@
+.single.single-projects {
+  .entry-title {
+    padding-top: 24px;
+  }
+
+  .entry-footer ul.category-list {
+    list-style: none;
+    padding   : 24px 0;
+    margin    : 0;
+  }
+
+  .nav-links {
+    padding: 24px 0;
+  }
+
+  .nav-next,
+  .nav-previous {
+    width    : auto;
+    max-width: 50%;
+  }
+
+  .nav-next a,
+  .nav-previous a {
+    display   : flex;
+    position  : relative;
+    text-align: right !important;
+    padding   : 1.2rem 1.2rem 1.2rem 1.4rem;
+
+    &::after,
+    &::before {
+      content         : '';
+      display         : block;
+      position        : absolute;
+      left            : 5px;
+      height          : 15px;
+      width           : 6px;
+      background-color: #333;
+      transition      : $transition;
+    }
+
+    &::before {
+      top      : 20px;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top      : 26px;
+      transform: rotate(-45deg);
+    }
+
+    &:focus,
+    &:hover {
+      &::after,
+      &::before {
+        background-color: $color-active;
+      }
+    }
+  }
+
+  .nav-next a {
+    padding-right: 1.4rem !important;
+
+    &::after,
+    &::before {
+      left : auto;
+      right: 5px;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+}

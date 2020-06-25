@@ -6,57 +6,55 @@
  *
  * @package bryhub-retro
  */
-
+ // Will eventually create a new template part to eliminate these conditional variables
+ if (is_singular()) {
+     $article_bootstrap_classes = 'col-12';
+     $title_markup_open = '<h1 class="entry-title">';
+     $title_markup_close = '</h1>';
+     $entry_content = 'the_content';
+ } else {
+     $article_bootstrap_classes = 'col-12 col-md-6 col-lg-4 col-xl-3';
+     $title_markup_open = '<h2 class="entry-title">';
+     $title_markup_close = '</h2>';
+     $entry_content = 'the_excerpt';
+ }
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('col-12 col-md-6 col-lg-4 col-xl-3'); ?>>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class($article_bootstrap_classes); ?>>
 	<div class="article-card">
 		<header class="entry-header">
-			<?php bryhub_retro_entry_footer(); ?>
+      <?php if (!is_singular()) : ?>
 			<a href='<?php echo esc_url(get_permalink()) ?>' rel="bookmark">
-				<div class="project-post-thumbnail-container">
-					<div class="project-post-thumbnail" style="background-image:url(' <?php echo esc_url(the_post_thumbnail_url()); ?> ')"></div>
-				</div>
-				<?php
-              if (is_singular()) :
-                      the_title('<h1 class="entry-title">', '</h1>');
-              else :
-                      the_title('<h2 class="entry-title">', '</h2>');
-      endif; ?>
+					<div class="project-post-thumbnail-container">
+						<div class="project-post-thumbnail" style="background-image:url(' <?php echo esc_url(the_post_thumbnail_url()); ?> ')"></div>
+					</div>
+				<?php the_title($title_markup_open, $title_markup_close) ?>
 			</a>
+    <?php else : ?>
+      <?php the_title($title_markup_open, $title_markup_close) ?>
+    <?php endif; ?>
 		</header><!-- .entry-header -->
 			<div class="entry-content">
 				<?php
-                the_excerpt(sprintf(
-          wp_kses(
-                        /* translators: %s: Name of current post. Only visible to screen readers */
-                        __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'bryhub-retro'),
-              array(
-                            'span' => array(
-                                'class' => array(),
-                            ),
-                        )
-          ),
-          get_the_title()
-      ));
-
-                wp_link_pages(array(
-                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'bryhub-retro'),
-                    'after'  => '</div>',
-                ));
-                ?>
+                    $entry_content();
+            wp_link_pages([
+                'before' => '<div class="page-links">' . esc_html__('Pages:', 'bryhub-retro'),
+                'after' => '</div>',
+            ]);
+        ?>
 			</div><!-- .entry-content -->
 
 			<footer class="entry-footer">
 				<?php
-                $categories = get_the_category();
-                            if (sizeof($categories) > 0) :
-                ?>
+            $categories = get_the_category();
+              if (sizeof($categories) > 0) :
+        ?>
 				<ul class="category-list">
 					<?php
-                    foreach ($categories as $category) {
-                        echo '<li><a href="' . get_category_link($category) . '">' . $category->name . '</a></li>';
-                    }
-              ?>
+              foreach ($categories as $category) {
+                  echo '<li><a href="' . get_category_link($category) . '">' . $category->name . '</a></li>';
+              }
+          ?>
 				</ul>
 				<?php endif; ?>
 			</footer><!-- .entry-footer -->

@@ -77,29 +77,29 @@
           color: $color-off-text;
         }
       }
+    }
+  }
+}
 
-      .category-list {
-        list-style    : none;
-        padding       : 0 0.8rem 0.8rem;
-        margin        : 0;
-        font-size     : 0.8rem;
-        font-style    : italic;
-        letter-spacing: 0;
+.category-list {
+  list-style    : none;
+  padding       : 0 0.8rem 0.8rem;
+  margin        : 0;
+  font-size     : 0.8rem;
+  font-style    : italic;
+  letter-spacing: 0;
 
-        li {
-          margin-bottom: 0.2rem;
+  li {
+    margin-bottom: 0.2rem;
 
-          a {
-            padding    : 0 0.4rem;
-            transition : $transition;
-            border-left: 1px solid #444;
+    a {
+      padding    : 0 0.4rem;
+      transition : $transition;
+      border-left: 1px solid #444;
 
-            &:focus,
-            &:hover {
-              border-left: 1px solid $color-active;
-            }
-          }
-        }
+      &:focus,
+      &:hover {
+        border-left: 1px solid $color-active;
       }
     }
   }
