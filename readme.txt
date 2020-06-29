@@ -1,19 +1,19 @@
 === bryhub-retro ===
 
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Contributors: javaBryan
+Tags: custom-background, custom-logo, custom-menu, featured-images, custom-post-types
 
-Requires at least: 4.5
-Tested up to: 4.8
+Requires at least: 5.2
+Tested up to: 5.2
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called bryhub-retro.
+The theme for my personal site, bryhub-retro.
 
 == Description ==
 
-Description
+Space theme with silliness. Supports projects, posts, pages, categories, archives and more.
 
 == Installation ==
 
@@ -25,7 +25,7 @@ Description
 
 = Does this theme support any plugins? =
 
-bryhub-retro includes support for Infinite Scroll in Jetpack.
+bryhub-retro requires no plugins, although Wordfence is highly recommended.
 
 == Changelog ==
 
@@ -36,3 +36,8 @@ bryhub-retro includes support for Infinite Scroll in Jetpack.
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* Bootstrap. Thank you for allowing me to be lazy.
+* Material Designs, your box shadows are the best on the web.
+* Pixabay for all the free images anyone could want.
+* OMGSVG and icomoon, my go-to for all my svg needs
+* Special thanks to the Affinity team for Designer and Photo and the reasonable affordable prices of their software, since Adobe is absolutely on crack these days.
