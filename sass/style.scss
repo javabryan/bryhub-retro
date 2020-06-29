@@ -11,7 +11,6 @@ Text Domain: bryhub-retro
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 @import "~bootstrap/scss/functions";
-@import "variables";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/root";
@@ -44,10 +43,13 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @import "modules/infinite-scroll";
 @import "media/media";
 @import "variables";
+@import "block-editor-fixes";
+@import "archive-category";
 @import "fonts";
 @import "header";
-@import "front-page";
+@import "general";
 @import "sprites";
 @import "archive";
 @import "footer";
 @import "single";
+@import "page";

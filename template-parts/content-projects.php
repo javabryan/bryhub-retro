@@ -6,7 +6,7 @@
  *
  * @package bryhub-retro
  */
- // Will eventually create a new template part to eliminate these conditional variables
+ // TODO create a new template part to eliminate these conditional variables
  if (is_singular()) {
      $article_bootstrap_classes = 'col-12';
      $title_markup_open = '<h1 class="entry-title">';
@@ -18,13 +18,18 @@
      $title_markup_close = '</h2>';
      $entry_content = 'the_excerpt';
  }
+
+$card_url = get_permalink();
+if (get_field('card_url', $post->post_id)) {
+    $card_url = get_field('card_url', $post->post_id);
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($article_bootstrap_classes); ?>>
 	<div class="article-card">
 		<header class="entry-header">
       <?php if (!is_singular()) : ?>
-			<a href='<?php echo esc_url(get_permalink()) ?>' rel="bookmark">
+			<a href="<?php echo esc_url($card_url); ?>" rel="bookmark">
 					<div class="project-post-thumbnail-container">
 						<div class="project-post-thumbnail" style="background-image:url(' <?php echo esc_url(the_post_thumbnail_url()); ?> ')"></div>
 					</div>

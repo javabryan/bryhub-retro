@@ -1,0 +1,170 @@
+.wp-block-group {
+  padding: 1.6rem;
+
+  h2 {
+    color: inherit;
+  }
+}
+
+blockquote {
+  position    : relative;
+  margin      : 0.8rem;
+  padding-left: 0.8rem;
+
+  &::before {
+    content         : '';
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    width           : 1px;
+    height          : 100%;
+    background-image: linear-gradient($color-primary, $color-secondary, $color-thirds, $color-fourths, $color-fifths);
+  }
+}
+
+table {
+  border-bottom: 1px solid $color-fifths;
+
+  tbody {
+    background-color: #1c1c1c;
+
+    td,
+    th {
+      padding      : 0.8rem;
+      border-bottom: 1px solid #333;
+    }
+
+    th {
+      color: #dbdada;
+    }
+  }
+}
+
+pre {
+  background-color: #1a1a1a;
+  color           : $color-font;
+}
+
+pre.wp-block-code {
+  padding   : 0;
+  word-wrap : break-word;
+  word-break: normal;
+}
+
+code {
+  display         : block;
+  padding         : 0.8rem;
+  background-color: #1a1a1a;
+  font-family     : monaco, monospace;
+  font-size       : 1rem;
+}
+
+pre[class*="language-"] {
+  border: none;
+}
+
+.page-links {
+  margin   : 0;
+  padding  : 1.6rem 0;
+  font-size: 1.2rem;
+
+  .post-page-numbers {
+    position     : relative;
+    padding      : 0.4rem 0.8rem;
+    border-radius: 2px;
+    margin-right : 0.4rem;
+
+    &.current {
+      color        : $color-active;
+      border-bottom: 1px solid $color-active;
+    }
+  }
+}
+
+.comments-link {
+  display: none;
+}
+
+.nav-links {
+  padding: 24px 0;
+}
+
+.nav-next,
+.nav-previous {
+  width    : auto;
+  max-width: 50%;
+}
+
+.nav-next a,
+.nav-previous a {
+  display   : flex;
+  position  : relative;
+  text-align: right !important;
+  padding   : 1.2rem 1.2rem 1.2rem 1.4rem;
+
+  &::after,
+  &::before {
+    content         : '';
+    display         : block;
+    position        : absolute;
+    left            : 5px;
+    height          : 15px;
+    width           : 6px;
+    background-color: #333;
+    transition      : $transition;
+  }
+
+  &::before {
+    top      : 20px;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    top      : 26px;
+    transform: rotate(-45deg);
+  }
+
+  &:focus,
+  &:hover {
+    &::after,
+    &::before {
+      background-color: $color-active;
+    }
+  }
+}
+
+.nav-next a {
+  padding-right: 1.4rem !important;
+
+  &::after,
+  &::before {
+    left : auto;
+    right: 5px;
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+}
+
+.read-more {
+  display         : block;
+  width           : 120px; //This never changes so I can get away with an explicit width
+  text-align      : center;
+  padding         : 0.4rem;
+  margin-top      : 0.8rem;
+  margin-left     : auto;
+  border-radius   : 0.8rem;
+  transition      : $transition;
+  background-color: darken($color-thirds, 20%);
+
+  &:focus,
+  &:hover {
+    color      : #fff !important;
+    text-shadow: 1px 1px 6px #444;
+  }
+}

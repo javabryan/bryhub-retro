@@ -6,7 +6,6 @@
  *
  * @package bryhub-retro
  */
-
 ?>
 
 <section class="no-results not-found">
@@ -22,11 +21,11 @@
                 '<p>' . wp_kses(
                     /* translators: 1: link to WP admin new post page. */
                     __('There\'s nothing to see here. Probably because I\'m lazy. <a href="%1$s">Get started here</a>.', 'bryhub-retro'),
-                    array(
-                        'a' => array(
-                            'href' => array(),
-                        ),
-                    )
+                    [
+                        'a' => [
+                            'href' => [],
+                        ],
+                    ]
                 ) . '</p>',
                 esc_url(admin_url('post-new.php'))
             );

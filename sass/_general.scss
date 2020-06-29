@@ -3,8 +3,28 @@ body {
   overflow-x      : hidden;
 }
 
+.site-content {
+  min-height: calc(100vh - 163px);
+  @media screen and (min-width:769px) {
+    min-height: calc(100vh - 123px);
+  }
+}
+
+.page,
+.single {
+  .entry-content {
+    padding         : 1.6rem;
+    margin-bottom   : 2.4em;
+    box-shadow      : $shadow-1;
+    background-image: linear-gradient(to bottom right, #090909, #0d0d0d);
+  }
+}
+
 .archive,
-.home {
+.home,
+.page,
+.post,
+.single {
   main {
     &::before {
       content        : '';

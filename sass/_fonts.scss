@@ -9,11 +9,117 @@
 h1,
 h1 a {
   font-family: 'Architects Daughter', cursive;
+  word-break : break-all;
 }
 
 h2,
 h2 a {
   font-family: 'Acme', sans-serif;
+}
+
+.page,
+.single {
+  article {
+    padding: 0;
+  }
+
+  h2 {
+    font-size              : 2rem;
+    background             : -webkit-linear-gradient(right, lighten($color-active, 8%), lighten($color-active, 12%), lighten($color-active, 16%));
+    background-clip        : text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h3 {
+    background             : -webkit-linear-gradient(right, #fff, lighten($color-active, 20%));
+    background-clip        : text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size              : 1.6rem;
+  }
+
+  ul.category-list {
+    font-size: 1rem;
+    padding  : 0 !important;
+
+    li {
+      border-left  : none !important;
+      margin-bottom: 0.8rem;
+
+      &::after,
+      &::before {
+        display: none;
+      }
+
+      a {
+        background-color: #0e0e0e;
+        display         : block;
+        width           : 140px;
+        border-left     : none;
+        padding         : 0.4rem;
+        border-radius   : 0.4rem;
+        text-align      : center;
+        font-weight     : bold;
+        color           : #000 !important;
+      }
+    }
+
+    li:first-child a {
+      background-color: $color-primary;
+
+      &:focus,
+      &:hover {
+        background-color: $color-light-primary;
+        border-left     : none;
+      }
+    }
+
+    li:nth-child(2) a {
+      background-color: $color-secondary;
+
+      &:focus,
+      &:hover {
+        background-color: $color-light-secondary;
+        border-left     : none;
+      }
+    }
+
+    li:nth-child(3) a {
+      background-color: $color-thirds;
+
+      &:focus,
+      &:hover {
+        background-color: $color-light-thirds;
+        border-left     : none;
+      }
+    }
+
+    li:nth-child(4) a {
+      background-color: $color-fourths;
+
+      &:focus,
+      &:hover {
+        background-color: $color-light-fourths;
+        border-left     : none;
+      }
+    }
+
+    li:nth-child(5) a {
+      background-color: $color-fifths;
+
+      &:focus,
+      &:hover {
+        background-color: $color-light-fifths;
+        border-left     : none;
+      }
+    }
+  }
+}
+
+h4 {
+  color    : #fff;
+  font-size: 1rem;
 }
 
 h1,

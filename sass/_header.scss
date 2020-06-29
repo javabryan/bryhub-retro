@@ -178,15 +178,13 @@ nav.navbar {
 }
 
 .title-container {
-  z-index         : 1;
-  background-color: rgba(0,0,0, 0.4);
-  border-radius   : 1rem;
+  z-index: 1;
 }
 @media screen and (min-width: 768px) {
   nav.navbar-general {
     padding         : 0.2rem !important;
-    background-image: linear-gradient(to bottom right, #141414, #0d0d0d);
-    border-bottom   : 1px solid #222;
+    background-image: linear-gradient(to bottom right, #090909, #0d0d0d);
+    border-bottom   : 1px solid #181818;
 
     .navbar-container {
       width: 100%;
@@ -230,6 +228,12 @@ nav.navbar {
           }
 
           &.active a {
+            &:focus {
+              span {
+                color: $color-active;
+              }
+            }
+
             span {
               color: #fff;
             }

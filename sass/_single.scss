@@ -1,6 +1,12 @@
+.single,
 .single.single-projects {
   .entry-title {
-    padding-top: 24px;
+    margin : 2.4rem;
+    padding: 0.8rem;
+  }
+
+  article {
+    color: $color-off-text;
   }
 
   .entry-footer ul.category-list {
@@ -72,6 +78,22 @@
 
     &::after {
       transform: rotate(45deg);
+    }
+  }
+}
+
+.single {
+  .entry-footer {
+    .cat-links,
+    .tags-links {
+      display       : flex;
+      flex-direction: row;
+      margin-bottom : 0.4rem;
+
+      a {
+        text-decoration: underline;
+        margin-left    : 0.4rem;
+      }
     }
   }
 }

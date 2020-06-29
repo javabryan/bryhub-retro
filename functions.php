@@ -6,7 +6,6 @@
  *
  * @package bryhub-retro
  */
-
 if (! function_exists('bryhub_retro_setup')) :
 
     function bryhub_retro_setup()
@@ -15,7 +14,6 @@ if (! function_exists('bryhub_retro_setup')) :
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
-
 
         add_theme_support('title-tag');
 
@@ -26,47 +24,85 @@ if (! function_exists('bryhub_retro_setup')) :
          */
         add_theme_support('post-thumbnails');
         add_theme_support('title-tag');
-        add_theme_support('custom-post-thumbnail', array(
+        add_theme_support('custom-post-thumbnail', [
             'height' => 480,
-            'width'  => 720,
-        ));
+            'width' => 720,
+        ]);
 
         set_post_thumbnail_size(400, 400);
 
         // This theme uses wp_nav_menu() in one location.
-        register_nav_menus(array(
+        register_nav_menus([
             'menu-1' => esc_html__('Primary', 'bryhub-retro'),
-        ));
+        ]);
 
-
-        add_theme_support('html5', array(
+        add_theme_support('html5', [
             'search-form',
             'comment-form',
             'comment-list',
             'gallery',
             'caption',
-        ));
+        ]);
 
         // Set up the WordPress core custom background feature.
-        add_theme_support('custom-background', apply_filters('bryhub_retro_custom_background_args', array(
+        add_theme_support('custom-background', apply_filters('bryhub_retro_custom_background_args', [
             'default-color' => '#000',
             'default-image' => '',
-        )));
+        ]));
 
         // Add theme support for selective refresh for widgets.
         add_theme_support('customize-selective-refresh-widgets');
 
-        /**
+        /*
          * Add support for core custom logo.
          *
          * @link https://codex.wordpress.org/Theme_Logo
          */
-        add_theme_support('custom-logo', array(
-            'height'      => 250,
-            'width'       => 250,
-            'flex-width'  => true,
+        add_theme_support('custom-logo', [
+            'height' => 250,
+            'width' => 250,
+            'flex-width' => true,
             'flex-height' => true,
-        ));
+        ]);
+
+        // Adds support for editor color palette.
+        add_theme_support('editor-color-palette', [
+            [
+                  'name' => __('Primary', 'bryhub-retro'),
+                  'slug' => 'primary',
+                  'color' => '#008B78',
+            ],
+            [
+                  'name' => __('Secondary', 'bryhub-retro'),
+                  'slug' => 'secondary',
+                  'color' => '#007ec2',
+            ],
+            [
+                  'name' => __('Thirds', 'bryhub-retro'),
+                  'slug' => 'thirds',
+                  'color' => '#5a70c2',
+            ],
+            [
+                  'name' => __('Fourths', 'bryhub-retro'),
+                  'slug' => 'fourths',
+                  'color' => '#945caf',
+            ],
+            [
+                  'name' => __('Fifths', 'bryhub-retro'),
+                  'slug' => 'fifths',
+                  'color' => '#007bac',
+            ],
+            [
+                  'name' => __('Active', 'bryhub-retro'),
+                  'slug' => 'active',
+                  'color' => '#ffa17a',
+            ],
+            [
+                  'name' => __('Paragraph', 'bryhub-retro'),
+                  'slug' => 'paragraph',
+                  'color' => '#ffa17a',
+            ],
+          ]);
     }
 endif;
 add_action('after_setup_theme', 'bryhub_retro_setup');
@@ -91,15 +127,15 @@ add_action('after_setup_theme', 'bryhub_retro_content_width', 0);
  */
 function bryhub_retro_widgets_init()
 {
-    register_sidebar(array(
-        'name'          => esc_html__('Sidebar', 'bryhub-retro'),
-        'id'            => 'sidebar-1',
-        'description'   => esc_html__('Add widgets here.', 'bryhub-retro'),
+    register_sidebar([
+        'name' => esc_html__('Sidebar', 'bryhub-retro'),
+        'id' => 'sidebar-1',
+        'description' => esc_html__('Add widgets here.', 'bryhub-retro'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ));
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ]);
 }
 add_action('widgets_init', 'bryhub_retro_widgets_init');
 
@@ -109,13 +145,13 @@ add_action('widgets_init', 'bryhub_retro_widgets_init');
 function bryhub_retro_scripts()
 {
     wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=Acme|Architects+Daughter|Raleway:400,700&display=swap');
-    wp_enqueue_style('bryhub-retro-style', get_stylesheet_uri(), array('googlefonts'));
+    wp_enqueue_style('bryhub-retro-style', get_stylesheet_uri(), ['googlefonts']);
 
-    wp_enqueue_script('bryhub-retro-script', get_template_directory_uri() . '/index.js', array( "jquery" ), '20151215', true);
+    wp_enqueue_script('bryhub-retro-script', get_template_directory_uri() . '/index.js', ['jquery'], '20151215', true);
 
-    wp_enqueue_script('bryhub-retro-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
+    wp_enqueue_script('bryhub-retro-navigation', get_template_directory_uri() . '/js/navigation.js', [], '20151215', true);
 
-    wp_enqueue_script('bryhub-retro-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
+    wp_enqueue_script('bryhub-retro-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', [], '20151215', true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -152,9 +188,9 @@ function register_navwalker()
 }
 add_action('after_setup_theme', 'register_navwalker');
 
-register_nav_menus(array(
+register_nav_menus([
     'primary' => __('Primary Menu', 'bryhub-retro'),
-));
+]);
 
 // Adding menu icons to nav-walker
 add_filter('wp_nav_menu_objects', 'bryhub_add_menu_icons', 10, 2);
@@ -167,7 +203,6 @@ function bryhub_add_menu_icons($items, $args)
 
             // vars
         $icon = get_field('menu-item-icon', $item);
-
 
         // append icon
         if ($icon) {
@@ -183,13 +218,13 @@ function bryhub_add_menu_icons($items, $args)
 }
 
 /**
-* Add custom post type Projects
-**/
+ * Add custom post type Projects
+ **/
 // Register Custom Post Type project
 // Register Custom Post Type Project
 function create_projects_cpt()
 {
-    $labels = array(
+    $labels = [
         'name' => _x('Projects', 'Post Type General Name', 'bryhub'),
         'singular_name' => _x('Project', 'Post Type Singular Name', 'bryhub'),
         'menu_name' => _x('Projects', 'Admin Menu text', 'bryhub'),
@@ -217,14 +252,13 @@ function create_projects_cpt()
         'items_list' => __('Projects list', 'bryhub'),
         'items_list_navigation' => __('Projects list navigation', 'bryhub'),
         'filter_items_list' => __('Filter Projects list', 'bryhub'),
-    );
-    $args = array(
+    ];
+    $args = [
         'label' => __('Project', 'bryhub'),
         'description' => __('Hubble Bubble', 'bryhub'),
         'labels' => $labels,
         'menu_icon' => 'dashicons-lightbulb',
-        'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'author', 'trackbacks', 'page-attributes', 'post-formats', 'custom-fields'),
-        'taxonomies' => array('category'),
+        'supports' => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'author', 'trackbacks', 'page-attributes', 'post-formats', 'custom-fields'],
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
@@ -238,7 +272,34 @@ function create_projects_cpt()
         'show_in_rest' => true,
         'publicly_queryable' => true,
         'capability_type' => 'post',
-    );
+        'taxonomies' => ['category'],
+    ];
     register_post_type('projects', $args);
 }
 add_action('init', 'create_projects_cpt', 0);
+
+//Add projects to categories
+function query_post_type($query)
+{
+    if (is_category()) {
+        $post_type = get_query_var('post_type');
+        if ($post_type) {
+            $post_type = $post_type;
+        } else {
+            $post_type = ['nav_menu_item', 'post', 'projects'];
+        } // don't forget nav_menu_item to allow menus to work!
+        $query->set('post_type', $post_type);
+
+        return $query;
+    }
+}
+add_filter('pre_get_posts', 'query_post_type');
+
+/*
+* Add read more to excerpt
+*/
+function bryhub_retro_new_excerpt_more($more)
+{
+    return ' <a class="read-more" href="' . get_permalink(get_the_ID()) . '">Read More</a>';
+}
+add_filter('excerpt_more', 'bryhub_retro_new_excerpt_more');

@@ -8,7 +8,6 @@
  *
  * @package bryhub-retro
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -28,16 +27,16 @@
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'bryhub-retro'); ?></a>
 		<nav class="navbar navbar-general">
 				<?php
-                wp_nav_menu(array(
-                    'theme_location'  => 'primary',
-                    'depth'           => 1,
-                    'container'       => 'div',
+                wp_nav_menu([
+                    'theme_location' => 'primary',
+                    'depth' => 1,
+                    'container' => 'div',
                     'container_class' => 'navbar-container',
-                    'container_id'    => 'primary-navbar-container',
-                    'menu_class'      => 'navbar-nav w-100',
-                    'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                    'walker'          => new WP_Bootstrap_Navwalker()
-                ));
+                    'container_id' => 'primary-navbar-container',
+                    'menu_class' => 'navbar-nav w-100',
+                    'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker' => new WP_Bootstrap_Navwalker(),
+                ]);
                 ?>
 			</nav>
 	<?php endif; ?>
