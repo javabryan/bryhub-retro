@@ -260,10 +260,6 @@ nav.navbar {
   }
 }
 @media screen and (max-width: 767px) {
-  body.home .site-content main {
-    padding-bottom: 86px !important;
-  }
-
   body {
     margin-bottom: 86px;
   }
@@ -317,9 +313,5 @@ nav.navbar {
         }
       }
     }
-  }
-
-  h1.bryhub-site-title {
-    font-size: 4rem !important;
   }
 }

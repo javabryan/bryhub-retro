@@ -23,7 +23,7 @@
 	<?php get_template_part('template-parts/global', 'svg'); ?>
 
 <div id="page">
-	<?php if (!is_front_page() && !is_home()) : ?>
+	<?php if (!is_front_page()) : ?>
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'bryhub-retro'); ?></a>
 		<nav class="navbar navbar-general">
 				<?php

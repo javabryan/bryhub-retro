@@ -1,0 +1,74 @@
+//Ironing out quirks queries and weird stuff
+
+html {
+  overflow-x: hidden !important;
+}
+@media screen and (max-width: 768px) {
+  h1.entry-title {
+    margin-right: 0 !important;
+    margin-left : 0 !important;
+  }
+
+  .entry-content {
+    padding: 0.8rem !important;
+  }
+
+  .home .site-content main {
+    padding-left : 0 !important;
+    padding-right: 0 !important;
+  }
+
+  code {
+    font-size: 0.7rem;
+  }
+
+  main.site-main {
+    padding: 0.4rem 0.4rem 0 !important;
+  }
+
+  div.container {
+    padding-right: 0 !important;
+    padding-left : 0 !important;
+  }
+
+  .page,
+  .single {
+    .category-list li a {
+      margin: 0 auto;
+      width : 80% !important;
+    }
+  }
+}
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+  background-color: #222;
+}
+
+.error404 .site-content {
+  padding: 2rem;
+  color  : #888;
+}
+
+.search.search-results .site-content {
+  padding: 2rem;
+  color  : #888;
+}
+
+.search.search-results h1.page-title {
+  margin-bottom: 2rem;
+}
+
+.blog article.post {
+  margin: 15px auto;
+}
+
+.entry-header .entry-title a {
+  text-decoration: none !important;
+}
+@media screen and (max-width: 768px) {
+  a,
+  p,
+  span {
+    font-size: 1.2rem;
+  }
+}

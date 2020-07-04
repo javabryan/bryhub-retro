@@ -43,9 +43,9 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @import "modules/infinite-scroll";
 @import "media/media";
 @import "variables";
-@import "block-editor-fixes";
 @import "archive-category";
 @import "fonts";
+@import "front-page";
 @import "header";
 @import "general";
 @import "sprites";
@@ -53,3 +53,4 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @import "footer";
 @import "single";
 @import "page";
+@import "quirks";

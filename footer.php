@@ -12,7 +12,7 @@
 
 </div><!-- #content -->
 
-<?php if (!is_front_page() && !is_home()) : ?>
+<?php if (!is_front_page()) : ?>
 <footer class="site-footer">
   <div class="container">
     <div class="row">

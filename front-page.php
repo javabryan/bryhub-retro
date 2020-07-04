@@ -6,7 +6,6 @@
  *
  * @package bryhub-retro
  */
-
 get_header();
 ?>
     <main>
@@ -34,16 +33,16 @@ get_header();
             <div class="bryhub-tagline"><?php esc_html(bloginfo('description')); ?></div>
             <nav class="navbar navbar-expand-md">
       				<?php
-                      wp_nav_menu(array(
-                          'theme_location'  => 'primary',
-                          'depth'           => 1,
-                          'container'       => 'div',
+                      wp_nav_menu([
+                          'theme_location' => 'primary',
+                          'depth' => 1,
+                          'container' => 'div',
                           'container_class' => 'navbar-container',
-                          'container_id'    => 'primary-navbar-container',
-                          'menu_class'      => 'navbar-nav w-100',
-                          'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                          'walker'          => new WP_Bootstrap_Navwalker()
-                      ));
+                          'container_id' => 'primary-navbar-container',
+                          'menu_class' => 'navbar-nav w-100',
+                          'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+                          'walker' => new WP_Bootstrap_Navwalker(),
+                      ]);
                       ?>
       			</nav>
         </div>

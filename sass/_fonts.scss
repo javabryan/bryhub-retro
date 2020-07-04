@@ -2,6 +2,13 @@
   font-family: 'Raleway', sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  word-wrap : normal;
+  word-break: normal;
+}
+
 .bryhub-site-title,
 .bryhub-site-title a,
 .site-title,
@@ -25,7 +32,7 @@ h2 a {
 
   h2 {
     font-size              : 2rem;
-    background             : -webkit-linear-gradient(right, lighten($color-active, 8%), lighten($color-active, 12%), lighten($color-active, 16%));
+    background             : -webkit-linear-gradient(right, #fff, #fafafa, #fff);
     background-clip        : text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -29,7 +29,7 @@
   .nav-previous a {
     display   : flex;
     position  : relative;
-    text-align: right !important;
+    text-align: left !important;
     padding   : 1.2rem 1.2rem 1.2rem 1.4rem;
 
     &::after,
@@ -65,6 +65,7 @@
 
   .nav-next a {
     padding-right: 1.4rem !important;
+    text-align   : right !important;
 
     &::after,
     &::before {
