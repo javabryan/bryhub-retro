@@ -1,0 +1,13 @@
+.menu {
+	.menu-item {
+		a {
+			color: $color_light-text;
+			text-decoration: none;
+
+			.menu-item-icon {
+				height: 32px;
+				width: 32px;
+			}
+		}
+	}
+}

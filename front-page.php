@@ -31,17 +31,17 @@ get_header();
         <div class="title-container">
             <h1 class="bryhub-site-title"><?php esc_html(bloginfo('name')); ?></h1>
             <div class="bryhub-tagline"><?php esc_html(bloginfo('description')); ?></div>
-            <nav class="navbar">
-      				<?php
-                      wp_nav_menu([
-                          'theme_location' => 'primary',
-                          'depth' => 1,
-                          'container' => 'div',
-                          'container_class' => 'navbar-container',
-                          'container_id' => 'primary-navbar-container'
-                      ]);
-                      ?>
-      			</nav>
+            <nav class="front-page-navbar">
+		        <?php
+		        wp_nav_menu( [
+			        'theme_location'  => 'primary',
+			        'depth'           => 1,
+			        'container'       => 'div',
+			        'container_class' => 'navbar-container',
+			        'container_id'    => 'primary-navbar-container'
+		        ] );
+		        ?>
+            </nav>
         </div>
     </main>
 </div>

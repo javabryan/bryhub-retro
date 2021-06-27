@@ -32,7 +32,6 @@
   transform                : rotate(110deg);
   animation-name           : rocket-path;
   animation-timing-function: linear;
-  z-index                  : -10;
 }
 
 .rocket-fire {
@@ -42,7 +41,6 @@
   top                      : 80%;
   left                     : 2px;
   transform                : rotate(90deg) scale(2);
-  z-index                  : -1;
   animation-name           : rocket-fire-path;
   animation-duration       : $animation-fire-length;
   animation-timing-function: step-end;
@@ -59,7 +57,6 @@
   transform                : rotatey(180deg);
   animation-name           : enemy-path;
   animation-timing-function: linear;
-  z-index                  : 0;
 }
 
 .sprite-enemy-laser {

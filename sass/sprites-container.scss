@@ -1,0 +1,7 @@
+.sprites-container {
+	pointer-events: none;
+	& *,
+	& > * {
+		pointer-events: none;
+	}
+}

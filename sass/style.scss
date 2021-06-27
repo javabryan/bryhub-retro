@@ -12,8 +12,13 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 */
 
 @import "typography/fonts";
+@import "typography/paragraph";
+@import "typography/headings";
 @import "normalize";
 @import "variables";
 @import "sprites";
-@import "typography/headings";
-@import "typography/paragraph";
+@import "body";
+@import "main";
+@import "sprites-container";
+@import "title-container";
+@import "front-page-navbar";

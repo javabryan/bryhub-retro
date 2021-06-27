@@ -19,7 +19,7 @@ $color_active            : #ffa17a;
 
 //Color Palette Light
 
-$color_lighten-amount      : 25%;
+$color_lighten-amount    : 25%;
 $color_font              : #f8fff8;
 $color_menu-item         : #a1a1a1;
 $color_link              : #9a5462;
@@ -29,13 +29,13 @@ $color_light-secondary   : lighten($color_secondary, $color_lighten-amount);
 $color_light-thirds      : lighten($color_thirds, $color_lighten-amount);
 $color_light-fourths     : lighten($color_fourths, $color_lighten-amount);
 $color_light-fifths      : lighten($color_fifths, $color_lighten-amount); //Font colors
-$color_background: linear-gradient(to bottom right, #090909, #0d0d0d);
+$color_background        : linear-gradient(to bottom right, #090909, #0d0d0d);
 
 //Font Colors
 
-$color_font              : #f8f7f1;
+$color_light-text        : #f8f7f1;
+$color_light-secondary   : #c4c4c4;
 $color_off-text          : #c1bebe;
-$color_font-secondary    : #c4c4c4;
 
 //Material Designs
 
