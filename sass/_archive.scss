@@ -1,109 +1,110 @@
 .archive,
 .blog,
 .home.blog {
-  .index-header,
-  header.page-header {
-    margin : 2.4rem;
-    padding: 0.8rem;
-  }
+	.index-header,
+	header.page-header {
+		margin  : 2.4rem;
+		padding : 0.8rem;
+	}
 
-  .project-article-row {
-    article.projects {
-      padding-bottom: 30px;
-    }
+	.project-article-row {
+		article.projects {
+			padding-bottom : 30px;
+		}
 
-    .article-card {
-      position                  : relative;
-      padding                   : 0;
-      background-image          : linear-gradient(to top left, #1a1a1a, #141414, #121212, #0f0f0f, #090909);
-      border-radius             : 0.4rem;
-      border-bottom-right-radius: 2rem;
-      height                    : 100%;
-      border-bottom             : 1px solid #222;
-      border-right              : 1px solid #222;
-      overflow                  : hidden;
+		.article-card {
+			position                   : relative;
+			padding                    : 0;
+			background-image           : linear-gradient(to top left, #1a1a1a, #141414, #121212, #0f0f0f, #090909);
+			border-radius              : 0.4rem;
+			border-bottom-right-radius : 2rem;
+			height                     : 100%;
+			border-bottom              : 1px solid #222;
+			border-right               : 1px solid #222;
+			overflow                   : hidden;
 
-      .edit-link {
-        position        : absolute;
-        background-color: black;
-        padding         : 0.4rem;
-        margin-left     : 0.8rem;
-        border-bottom   : 1px solid $color-active;
-        z-index         : 2;
-      }
+			.edit-link {
+				position         : absolute;
+				background-color : black;
+				padding          : 0.4rem;
+				margin-left      : 0.8rem;
+				border-bottom    : 1px solid $color-active;
+				z-index          : 2;
+			}
 
-      .entry-header {
-        a {
-          .project-post-thumbnail-container {
-            position: relative;
-            height  : 160px;
-            width   : auto;
-            overflow: hidden;
+			.entry-header {
+				a {
+					.project-post-thumbnail-container {
+						position : relative;
+						height   : 160px;
+						width    : auto;
+						overflow : hidden;
 
-            .project-post-thumbnail {
-              position           : absolute;
-              height             : 100%;
-              width              : 100%;
-              background-size    : cover;
-              background-repeat  : no-repeat;
-              background-position: center;
-              top                : 50%;
-              left               : 50%;
-              transform          : translate(-50%, -50%) scale(1);
-              transition         : $transition;
-            }
-            @media screen and (max-width: 768px) {
-              height: 280px;
-            }
-          }
+						.project-post-thumbnail {
+							position            : absolute;
+							height              : 100%;
+							width               : 100%;
+							background-size     : cover;
+							background-repeat   : no-repeat;
+							background-position : center;
+							top                 : 50%;
+							left                : 50%;
+							transform           : translate(-50%, -50%) scale(1);
+							transition          : $transition;
+						}
 
-          .entry-title {
-            padding    : 0.8rem 0.8rem 0;
-            font-size  : 1.6rem;
-            line-height: 1.6rem;
-          }
+						@media screen and (max-width : 768px) {
+							height : 280px;
+						}
+					}
 
-          &:focus,
-          &:hover {
-            .project-post-thumbnail {
-              transform: translate(-50%, -50%) scale(1.04);
-            }
-          }
-        }
-      }
+					.entry-title {
+						padding     : 0.8rem 0.8rem 0;
+						font-size   : 1.6rem;
+						line-height : 1.6rem;
+					}
 
-      .entry-content {
-        margin-top: 0;
-        padding   : 0 0.8rem;
+					&:focus,
+					&:hover {
+						.project-post-thumbnail {
+							transform : translate(-50%, -50%) scale(1.04);
+						}
+					}
+				}
+			}
 
-        p {
-          color: $color-off-text;
-        }
-      }
-    }
-  }
+			.entry-content {
+				margin-top : 0;
+				padding    : 0 0.8rem;
+
+				p {
+					color : $color-off-text;
+				}
+			}
+		}
+	}
 }
 
 .category-list {
-  list-style    : none;
-  padding       : 0 0.8rem 0.8rem;
-  margin        : 0;
-  font-size     : 0.8rem;
-  font-style    : italic;
-  letter-spacing: 0;
+	list-style     : none;
+	padding        : 0 0.8rem 0.8rem;
+	margin         : 0;
+	font-size      : 0.8rem;
+	font-style     : italic;
+	letter-spacing : 0;
 
-  li {
-    margin-bottom: 0.2rem;
+	li {
+		margin-bottom : 0.2rem;
 
-    a {
-      padding    : 0 0.4rem;
-      transition : $transition;
-      border-left: 1px solid #444;
+		a {
+			padding     : 0 0.4rem;
+			transition  : $transition;
+			border-left : 1px solid #444;
 
-      &:focus,
-      &:hover {
-        border-left: 1px solid $color-active;
-      }
-    }
-  }
+			&:focus,
+			&:hover {
+				border-left : 1px solid $color-active;
+			}
+		}
+	}
 }

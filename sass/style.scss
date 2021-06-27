@@ -10,38 +10,10 @@ License URI: LICENSE
 Text Domain: bryhub-retro
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-@import "~bootstrap/scss/root";
-@import "~bootstrap/scss/reboot";
-@import "~bootstrap/scss/type";
-@import "~bootstrap/scss/images";
-@import "~bootstrap/scss/grid";
-@import "~bootstrap/scss/buttons";
-@import "~bootstrap/scss/transitions";
-@import "~bootstrap/scss/dropdown";
-@import "~bootstrap/scss/nav";
-@import "~bootstrap/scss/navbar";
-@import "~bootstrap/scss/forms";
-@import "~bootstrap/scss/input-group";
-@import "~bootstrap/scss/card";
-@import "~bootstrap/scss/media";
-@import "~bootstrap/scss/alert";
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+
+@import "colors";
 @import "normalize";
-@import "typography/typography";
-@import "elements/elements";
-@import "forms/forms";
-@import "navigation/navigation";
-@import "modules/accessibility";
-@import "modules/alignments";
-@import "modules/clearings";
-@import "site/secondary/widgets";
-@import "site/site";
-@import "modules/infinite-scroll";
-@import "media/media";
+@import "navigation";
 @import "variables";
 @import "archive-category";
 @import "fonts";
@@ -57,84 +29,84 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 //From site customizer
 a.skip-link.screen-reader-text {
-	opacity: 0;
-	transition: opacity 0.3s cubic-bezier(.25,.8,.25,1);
+	opacity    : 0;
+	transition : opacity 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 a.skip-link.screen-reader-text:focus {
-	opacity: 1;
-	top: 0;
-	left: 0;
-	width: 100%;
-	border: none;
-	border-radius: 0;
-	text-align: center;
-	background-color: #3C8979;
-	color: #fff !important;
+	opacity          : 1;
+	top              : 0;
+	left             : 0;
+	width            : 100%;
+	border           : none;
+	border-radius    : 0;
+	text-align       : center;
+	background-color : #3c8979;
+	color            : #fff !important;
 }
 
 pre,
 code {
-	background: #222;
-	color: #ddd;
+	background : #222;
+	color      : #ddd;
 }
 
 .post-title-container {
-	height: 100%;
+	height : 100%;
 }
 
 div.post-card-content {
-	width: 100%;
+	width : 100%;
 }
 
 .post-title-container {
-	flex-grow: 1;
+	flex-grow : 1;
 }
 
 a.read-more {
-	background-color: #5a70c2;
-	float:right;
-	align-self: center;
-	padding: 0.8rem;
-	border-radius: 0.4rem;
-	text-align:center;
-	margin: 1.6rem;
+	background-color : #5a70c2;
+	float            : right;
+	align-self       : center;
+	padding          : 0.8rem;
+	border-radius    : 0.4rem;
+	text-align       : center;
+	margin           : 1.6rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width : 768px) {
 	.post-title-container h2.entry-title a {
-		font-size:2rem;
+		font-size : 2rem;
 	}
 	a.read-more {
-		float: right;
+		float : right;
 	}
 
 	.post-card-body .entry-header {
-		min-height: 200px;
+		min-height : 200px;
 	}
 
 
 }
 
 .site-content a {
-	text-decoration: underline;
+	text-decoration : underline;
 }
 
 .nav-links a,
 .category-list a,
 .menu-item a,
 a.read-more {
-	text-decoration: none !important;
+	text-decoration : none !important;
 }
 
 .wp-block-button__link {
-	margin-bottom: 1.6rem;
+	margin-bottom : 1.6rem;
 }
 
 .wp-block-cover {
-	margin-bottom: 2rem;
+	margin-bottom : 2rem;
 }
 
 .entry-header {
-	background-position: center;
+	background-position : center;
 }
