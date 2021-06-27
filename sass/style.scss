@@ -11,6 +11,9 @@ Text Domain: bryhub-retro
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 
+@import "typography/fonts";
 @import "normalize";
 @import "variables";
 @import "sprites";
+@import "typography/headings";
+@import "typography/paragraph";

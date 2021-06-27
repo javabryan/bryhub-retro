@@ -1,0 +1,22 @@
+@font-face {
+	font-family  : 'Architects Daughter';
+	font-display : swap;
+	src          : local("Architects Daughter"),
+	url("inc/fonts/architects-daughter.woff2") format("woff2"),
+	url("inc/fonts/architects-daughter.woff2") format("woff");
+}
+
+@font-face {
+	font-family : 'Montserrat';
+	font-weight : 400;
+	src         : local("Montserrat"),
+	url("inc/fonts/montserrat-400.woff2") format("woff2"),
+	url("inc/fonts/montserrat-400.woff") format("woff");
+}
+
+@font-face {
+	font-family : 'Montserrat';
+	font-weight : 700;
+	src         : url("inc/fonts/montserrat-700.woff2") format("woff2"),
+	url("inc/fonts/montserrat-700.woff") format("woff");
+}

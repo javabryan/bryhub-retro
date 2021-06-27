@@ -144,8 +144,7 @@ add_action('widgets_init', 'bryhub_retro_widgets_init');
  */
 function bryhub_retro_scripts()
 {
-    wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=Acme|Architects+Daughter|Raleway:400,700&display=swap');
-    wp_enqueue_style('bryhub-retro-style', get_stylesheet_uri(), ['googlefonts']);
+    wp_enqueue_style('bryhub-retro-style', get_stylesheet_uri());
 
     wp_enqueue_script('bryhub-retro-script', get_template_directory_uri() . '/index.js', ['jquery'], '20151215', true);
 
