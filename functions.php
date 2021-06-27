@@ -146,9 +146,7 @@ function bryhub_retro_scripts()
 {
     wp_enqueue_style('bryhub-retro-style', get_stylesheet_uri());
 
-    wp_enqueue_script('bryhub-retro-script', get_template_directory_uri() . '/index.js', ['jquery'], '20151215', true);
-
-    wp_enqueue_script('bryhub-retro-navigation', get_template_directory_uri() . '/js/navigation.js', [], '20151215', true);
+    wp_enqueue_script('bryhub-retro-script', get_template_directory_uri() . '/index.js', '20151215', true);
 
     wp_enqueue_script('bryhub-retro-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', [], '20151215', true);
 
@@ -172,20 +170,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Add Navwalker
- */
-function register_navwalker()
-{
-    require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
-}
-add_action('after_setup_theme', 'register_navwalker');
 
 register_nav_menus([
     'primary' => __('Primary Menu', 'bryhub-retro'),
