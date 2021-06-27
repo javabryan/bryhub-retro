@@ -46,7 +46,7 @@
   animation-name           : rocket-fire-path;
   animation-duration       : $animation-fire-length;
   animation-timing-function: step-end;
-  transition               : 0;
+  transition               : unset;
 }
 
 .sprite-enemy {

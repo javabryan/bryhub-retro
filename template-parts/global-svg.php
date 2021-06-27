@@ -2,10 +2,14 @@
 /**
  * Template part for pulling in SVGs
  *
+ * SVGs have been minified and adjusted to suit the theme colors.
+ *
+ * OpenClipart-Vectors
+ *
  * @package bryhub-retro
  */
 ?>
-
+<!--Special acknowledgement and thank you to OpenClipart-Vectors https://pixabay.com/users/openclipart-vectors-30363/ via https://pixabay.com/ for the graphics used for the sprites.-->
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<defs>
         <symbol id="rocket-fire" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 250 80">
