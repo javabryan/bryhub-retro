@@ -107,14 +107,21 @@
 
 		// !important here to prevent duplicate code in front-page-navbar.scss
 		.menu-item {
-			a {
-				margin: 0 0.5rem !important;
+			a span {
+				margin : 0.5rem 0;
 			}
 
 			.menu-item-icon {
-				height : 3rem !important;
-				width  : 3rem !important;
+				height : 3.2rem !important;
+				width  : 3.2rem !important;
 			}
 		}
+	}
+}
+
+@media screen and (max-width : 600px) {
+	.menu .menu-item a span {
+		font-size : 1.4rem;
+		margin    : 0.5rem 0;
 	}
 }
