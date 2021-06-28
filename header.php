@@ -27,15 +27,14 @@ $template_directory_uri = get_template_directory_uri();
 <div id="page">
 	<?php if ( ! is_front_page() ) : ?>
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bryhub-retro' ); ?></a>
-        <nav class="navbar navbar-general">
+        <nav class="navbar">
 			<?php
 			wp_nav_menu( [
 				'theme_location'  => 'primary',
 				'depth'           => 1,
 				'container'       => 'div',
 				'container_class' => 'navbar-container',
-				'container_id'    => 'primary-navbar-container',
-				'menu_class'      => 'navbar-nav'
+				'container_id'    => 'primary-navbar-container'
 			] );
 			?>
         </nav>
