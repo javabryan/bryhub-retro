@@ -1,6 +1,21 @@
 .front-page-navbar .navbar-container {
 	.menu {
-		display: flex;
-		flex-direction: row;
+		flex-direction : row;
+
+		.menu-item {
+			a {
+				font-size      : 2rem;
+				font-family    : "Architects Daughter", sans-serif;
+				color          : $color_off-text;
+				flex-direction : column;
+				align-items    : center;
+				margin         : 0 1rem;
+			}
+
+			.menu-item-icon {
+				height : 4rem;
+				width  : 4rem;
+			}
+		}
 	}
 }
