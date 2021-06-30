@@ -26,7 +26,7 @@ $template_directory_uri = get_template_directory_uri();
 
 <div id="page">
 	<?php if ( ! is_front_page() ) : ?>
-        <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bryhub-retro' ); ?></a>
+        <a class="skip-link screen-reader-text" href="#content"><span><?php esc_html_e( 'Skip to content', 'bryhub-retro' ); ?></span></a>
         <nav class="navbar">
 			<?php
 			wp_nav_menu( [

@@ -6,8 +6,7 @@
 	margin          : 0;
 	padding         : 0;
 
-	.menu-item
-	a {
+	.menu-item a {
 		position        : relative;
 		display         : flex;
 		color           : $color_light-text;
@@ -37,7 +36,7 @@
 				height : 4px;
 				width  : 80%;
 				left   : 10%;
-				bottom : -2px;
+				bottom : -4px;
 			}
 		}
 
@@ -48,7 +47,7 @@
 		&[aria-current="page"] {
 
 			span {
-				color: lighten($color_active, 10%);
+				color : lighten($color_active, 10%);
 			}
 
 			&::before,
@@ -61,7 +60,7 @@
 			}
 
 			.menu-item-icon {
-				fill: $color_active;
+				fill : $color_active;
 			}
 		}
 	}

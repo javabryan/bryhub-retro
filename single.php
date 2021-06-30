@@ -8,7 +8,7 @@
  */
 get_header();
 ?>
-
+I AM SINGLE.PHP
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
 			<?php
