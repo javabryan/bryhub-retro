@@ -45,6 +45,7 @@
   animation-duration       : $animation-fire-length;
   animation-timing-function: step-end;
   transition               : unset;
+  z-index: -1;
 }
 
 .sprite-enemy {

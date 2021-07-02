@@ -19,7 +19,6 @@ get_header();
 			the_archive_description( '<div class="archive-description">', '</div>' );
 			?>
         </header><!-- .page-header -->
-        I am home
         <div class="z-index-1">
 			<?php
 			while ( have_posts() ) :
