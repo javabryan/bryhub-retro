@@ -1,0 +1,62 @@
+.navigation.pagination {
+	padding-bottom: 4rem;
+
+	.nav-links {
+		display: flex;
+		justify-content: center;
+
+		.page-numbers {
+			font-size: 1.6rem;
+			line-height: 2rem;
+			text-decoration: none;
+			color: $color_off-text;
+			margin: 0.25rem;
+			padding: 0.5rem;
+
+			&:hover:not(.current):not(.dots),
+			&:focus:not(.current):not(.dots) {
+				color: $color_active;
+			}
+
+			&.current {
+				font-weight: 700;
+				color: $color_light-text;
+			}
+
+			&.prev,
+			&.next {
+				position: relative;
+				font-family: "Architects Daughter";
+				font-size: 2rem;
+				line-height: 2rem;
+				color: $color_light-text;
+				font-weight: 700;
+				margin: 0.25rem 1.5rem;
+
+				&:before,
+				&:after {
+					content    : '';
+					position   : absolute;
+					bottom     : 0;
+					width      : 0;
+					height     : 0;
+					background-color: $color_active;
+					left       : 50%;
+					transition : $transition;
+				}
+
+				&:hover,
+				&:focus {
+					&::before,
+					&::after {
+						height : 4px;
+						width  : 90%;
+						left   : 5%;
+						bottom : -4px;
+					}
+				}
+			}
+		}
+	}
+}
+
