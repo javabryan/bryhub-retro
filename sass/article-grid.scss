@@ -1,0 +1,24 @@
+.article-grid {
+	color                 : $color-dark-text;
+	display               : grid;
+	grid-template-columns : repeat(auto-fit, minmax(300px, 1fr));
+	gap                   : 2rem;
+	margin                : 0 0 2rem;
+
+	article {
+		background-color : $color_light-text;
+		border-radius    : 1rem;
+		overflow         : hidden;
+
+		.article-featured {
+			height              : 250px;
+			width               : 100%;
+			background-size     : cover;
+			background-position : bottom;
+		}
+
+		.post-card-body {
+			padding : 1rem;
+		}
+	}
+}

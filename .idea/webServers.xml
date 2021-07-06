@@ -5,7 +5,7 @@
       <webServer id="6d9c79f9-db41-431f-aaa9-cf4a3a42743e" name="bryhub" url="http://bryhub.com">
         <fileTransfer rootFolder="/bryhub.com/public_html" host="bryhub.com" port="21">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="30000" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
         </fileTransfer>
       </webServer>

@@ -8,7 +8,7 @@
  */
 get_header();
 ?>
-<main class="site-main">
+<main class="site-main front-page">
     <div class="sprites-container">
         <div class="sprites sprite-rocket">
             <svg focusable="false">
