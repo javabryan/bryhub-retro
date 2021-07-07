@@ -42,7 +42,7 @@
 					height     : 0;
 					background-color: $color_active;
 					left       : 50%;
-					transition : $transition;
+					transition : all $transition;
 				}
 
 				&:hover,

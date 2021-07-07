@@ -1,0 +1,38 @@
+.post-card-body {
+	padding : 1rem;
+
+	.entry-header {
+		.entry-title a {
+			font-family: Montserrat, sans-serif;
+			font-size: 3rem;
+			font-weight: 700;
+			text-decoration: none;
+			color: $color_dark-text;
+			transition: color $transition;
+
+			&:hover,
+			&:focus {
+				color: $color_dark-off-text;
+			}
+
+			&:active {
+				color: $color_red;
+			}
+		}
+
+		.modified-date {
+			color: $color_dark-text;
+		}
+	}
+
+	.entry-footer {
+		.cat-links {
+			color: $color_dark-text;
+			a {
+				color: $color_blue;
+			}
+		}
+		.tag-links {}
+		.edit-link {}
+	}
+}

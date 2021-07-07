@@ -6,13 +6,6 @@
  *
  * @package bryhub-retro
  */
-/**
- * Template part for displaying posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package bryhub-retro
- */
 $categories     = get_the_category();
 $category       = $categories[0];
 $category_image = get_field( 'category_featured', 'category_' . $category->term_id );
@@ -20,18 +13,20 @@ $category_image = get_field( 'category_featured', 'category_' . $category->term_
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <div
-            class="article-featured"
-            style="background-image:url('<?php
-			if ( has_post_thumbnail() ) {
-				echo esc_attr( get_the_post_thumbnail_url() );
-			} elseif ($category_image != '') {
-				echo $category_image;
-			} else {
-			    echo get_template_directory_uri() . '/inc/img/bryhub-fallback.jpg';
-            }
-			?>')">
-    </div>
+    <a href="<?php echo esc_attr( get_permalink() ) ?>" rel="bookmark">
+        <div
+                class="article-featured"
+                style="background-image:url('<?php
+				if ( has_post_thumbnail() ) {
+					echo esc_attr( get_the_post_thumbnail_url() );
+				} elseif ( $category_image != '' ) {
+					echo $category_image;
+				} else {
+					echo get_template_directory_uri() . '/inc/img/bryhub-fallback.jpg';
+				}
+				?>')">
+        </div>
+    </a>
     <div class="post-card-body">
         <header class="entry-header">
             <div class="post-title-container">

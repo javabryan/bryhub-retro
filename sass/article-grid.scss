@@ -11,15 +11,34 @@
 		border-radius    : 1rem;
 		overflow         : hidden;
 
-		.article-featured {
-			height              : 250px;
-			width               : 100%;
-			background-size     : cover;
-			background-position : bottom;
-		}
+		a {
+			.article-featured {
+				height              : 250px;
+				width               : 100%;
+				background-size     : cover;
+				background-position : bottom;
+				filter: grayscale(0);
+				transition: filter $transition;
+			}
 
-		.post-card-body {
-			padding : 1rem;
+			&:hover,
+			&:focus {
+				.article-featured {
+					filter: grayscale(0.5);
+				}
+			}
+
+			&:active {
+				.article-featured {
+					filter: grayscale(0) contrast(1);
+				}
+			}
+
+			&:visited {
+				.article-featured {
+					filter: grayscale(1);
+				}
+			}
 		}
 	}
 }
