@@ -3,36 +3,79 @@
 
 	.entry-header {
 		.entry-title a {
-			font-family: Montserrat, sans-serif;
-			font-size: 3rem;
-			font-weight: 700;
-			text-decoration: none;
-			color: $color_dark-text;
-			transition: color $transition;
+			font-family     : Montserrat, sans-serif;
+			font-size       : 3rem;
+			font-weight     : 700;
+			text-decoration : none;
+			color           : $color_dark-text;
+			transition      : color $transition;
 
 			&:hover,
 			&:focus {
-				color: $color_dark-off-text;
+				color : $color_dark-off-text;
 			}
 
 			&:active {
-				color: $color_red;
+				color : $color_red;
 			}
 		}
 
 		.modified-date {
-			color: $color_dark-text;
+			color : $color_dark-text;
 		}
 	}
 
 	.entry-footer {
 		.cat-links {
-			color: $color_dark-text;
+			display     : block;
+			width       : 100%;
+			color       : $color_dark-text;
+
 			a {
-				color: $color_blue;
+				display          : inline-block;
+				padding          : 0.25rem;
+				background-color : #aaa;
+				border           : 1px solid #444;
+				border-radius    : 0.25rem;
+				color            : $color_dark-text;
+				text-decoration  : none;
 			}
+
+			$cat_light_colors : (
+				'green': $color_light_green,
+				'blue': $color_light_blue,
+				'purple': $color_light_purple,
+				'pink': $color_light_pink,
+				'red': $color_light_red,
+			);
+
+			$cat_dark_colors : (
+				'green': darken($color_green, 20%),
+				'blue': darken($color_blue, 20%),
+				'purple': darken($color_purple, 20%),
+				'pink': darken($color_pink, 20%),
+				'red': darken($color_red, 20%),
+			);
+
+			@each $name, $color in $cat_light_colors {
+				.category-#{$name} {
+					background-color : $color;
+				}
+			}
+
+			@each $name, $color in $cat_dark_colors {
+				.category-#{$name} {
+					color : $color;
+				}
+			}
+
+
 		}
-		.tag-links {}
-		.edit-link {}
+
+		.tag-links {
+		}
+
+		.edit-link {
+		}
 	}
 }

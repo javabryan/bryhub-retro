@@ -1,14 +1,14 @@
-//Structure
+// Structure
 
 $grid_width            : 0.25rem;
 
-//Animation variables
+// Animation variables
 
 $animation_length      : 120s;
 $animation_fire-length : 60s;
 $animation_boom-length : 30s;
 
-//Color Palette
+// Color Palette
 
 $color_green           : #008b78;
 $color_blue            : #007ec2;
@@ -17,7 +17,15 @@ $color_pink            : #945caf;
 $color_red             : #af5c74;
 $color_active          : #ffa17a;
 
-//Color Palette Utility
+// Light Color Palette
+
+$color_light_green           : #B3FFF5;
+$color_light_blue            : #B3E4FF;
+$color_light_purple          : #C7CFEA;
+$color_light_pink            : #DDCCE6;
+$color_light_red             : #E6CCD3;
+
+// Color Palette Utility
 
 $color_font            : #f8fff8;
 $color_menu-item       : #a1a1a1;
@@ -25,7 +33,7 @@ $color_link            : #9a5462;
 $color_link-hover      : #d67d64; //Transitions
 $color_background      : linear-gradient(to bottom right, #1a1a1a, #0d0d0d);
 
-//Font Colors
+// Font Colors
 
 $color_light-text      : #f8f7f1;
 $color_dark-text       : #333;
@@ -33,7 +41,7 @@ $color_light-secondary : #c4c4c4;
 $color_off-text        : #c1bebe;
 $color_dark-off-text   : #555;
 
-//Material Designs
+// Material Designs
 
 $shadow                : 0 1px 3px rgba(#333, 0.12), 0 1px 2px rgba(#333, 0.24);
 $shadow_large          : 0 14px 28px rgba(#333, 0.25), 0 10px 10px rgba(#333, 0.22);

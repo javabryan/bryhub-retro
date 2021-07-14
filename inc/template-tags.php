@@ -81,10 +81,11 @@ if (! function_exists('bryhub_retro_entry_footer')) :
         // Hide category and tag text for pages.
         if ('post' === get_post_type()) {
             /* translators: used between list items, there is a space after the comma */
-            $categories_list = get_the_category_list(esc_html__(', ', 'bryhub-retro'));
+            $categories_list = get_the_category_list(esc_html__(' ', 'bryhub-retro'));
+
             if ($categories_list) {
                 /* translators: 1: list of categories. */
-                printf('<span class="cat-links">' . esc_html__('Posted in %1$s', 'bryhub-retro') . '</span>', $categories_list); // WPCS: XSS OK.
+                printf('<span class="cat-links">' . esc_html__('%1$s', 'bryhub-retro') . '</span>', $categories_list); // WPCS: XSS OK.
             }
 
             /* translators: used between list items, there is a space after the comma */
